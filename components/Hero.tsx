@@ -69,7 +69,7 @@ export default function Hero() {
                             Future Data Scientist
                         </span>
                         <span className="text-coral-soft text-sm sm:text-base">
-                            Aspiring AI Engineer, Inshallah
+                            Aspiring AI Engineer, In sha Allah
                         </span>
                     </motion.div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
                     >
                         <div className="bg-ink-card px-4 py-4 sm:px-5 sm:py-5">
                             <div className="text-text-primary text-lg sm:text-xl font-medium">
-                                2+
+                                9+
                             </div>
                             <div className="text-text-muted text-[11px] mt-1">
                                 projects shipped
