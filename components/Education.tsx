@@ -53,7 +53,7 @@ export default function Education() {
                     variants={item}
                     className="block font-mono text-xs tracking-[0.2em] text-coral mb-4"
                 >
-                    — INDEX / 006
+                    INDEX / 006
                 </motion.span>
 
                 <motion.h1
@@ -81,13 +81,13 @@ export default function Education() {
                         </div>
                         <div>
                             <h2 className="text-text-primary text-lg font-medium">
-                                Diploma in Engineering — Computer Science
+                                Diploma in Engineering (Computer Science)
                             </h2>
                             <p className="text-text-secondary text-sm mt-1">
                                 Rangpur Ideal Institute of Technology (RIIT)
                             </p>
                             <p className="font-mono text-xs text-text-muted mt-2">
-                                2023 — 2027 (Insha Allah)
+                                2023 — 2027 (In sha Allah)
                             </p>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ export default function Education() {
                                     Data Science
                                 </p>
                                 <p className="text-text-muted text-xs mt-1 font-mono">
-                                    Next step, Insha Allah
+                                    Next step, In sha Allah
                                 </p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@ export default function Education() {
                     <FiTrendingUp className="text-coral mt-1 shrink-0" size={18} />
                     <p className="text-text-secondary text-sm sm:text-base">
                         Looking ahead, planning to grow further through advanced skills
-                        training and university-level academic pursuits, Insha Allah.
+                        training and university-level academic pursuits, In sha Allah.
                     </p>
                 </motion.div>
             </motion.div>
