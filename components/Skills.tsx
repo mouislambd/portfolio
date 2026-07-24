@@ -71,7 +71,7 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     {
         title: 'Future Stack',
         skills: [
-            { name: 'TypeScript (ES6+)', icon: SiTypescript },
+            { name: 'Python', icon: SiPython },
             { name: 'Machine Learning', icon: FiCpu },
             { name: 'Data Science', icon: FiDatabase },
             { name: 'NumPy & Pandas', icon: SiNumpy },
