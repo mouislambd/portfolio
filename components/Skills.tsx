@@ -58,7 +58,7 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     {
         title: 'Backend & Tools',
         skills: [
-            { name: 'Python', icon: SiPython },
+            { name: 'TypeScript', icon: SiTypescript },
             { name: 'Node.js', icon: SiNodedotjs },
             { name: 'Express.js', icon: SiExpress },
             { name: 'MongoDB', icon: SiMongodb },
