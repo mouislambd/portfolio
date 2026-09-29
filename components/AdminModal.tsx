@@ -27,3 +27,4 @@ export default function AdminModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+

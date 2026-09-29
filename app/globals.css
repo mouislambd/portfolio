@@ -3,14 +3,10 @@
 @theme {
   --color-ink: #1A202C; /* Deep Charcoal (Text) */
   --color-ink-card: #FFFFFF; /* White for cards */
-  --color-ink-line: rgba(26, 32, 44, 0.1); /* Subtle border */
+  --color-ink-line: rgba(26, 32, 44, 0.15); /* Slightly darker border */
 
-  --color-coral: #E05A47; /* Warm Orange (Accent) */
-  --color-coral-soft: #f48b7d;
-  --color-coral-dim: rgba(224, 90, 71, 0.1);
-
-  /* New Colors */
-  --color-teal-cyan: #31AAA9;
+  --color-accent-teal: #31AAA9; /* Primary Accent */
+  --color-accent-rust: #E05A47; /* Secondary Accent */
   
   --color-text-primary: #1A202C; /* Deep Charcoal */
   --color-text-secondary: #4A5568;

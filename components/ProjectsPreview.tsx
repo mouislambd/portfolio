@@ -99,10 +99,10 @@ export default function ProjectsPreview() {
                             key={project._id}
                             variants={item}
                             whileHover={{ y: -4 }}
-                            className="bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
+                            className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
-                            <div className="w-full h-36 rounded-xl bg-gradient-to-br from-coral/20 via-ink to-ink mb-5 flex items-center justify-center">
-                                <span className="font-display text-2xl text-[#E05A47]-soft">
+                            <div className="w-full h-36 rounded-xl bg-gradient-to-br from-[#E05A47]/10 via-[#FDFBF7] to-[#FDFBF7] mb-5 flex items-center justify-center">
+                                <span className="font-display text-2xl text-[#E05A47]/80">
                                     {project.title}
                                 </span>
                             </div>
@@ -118,7 +118,7 @@ export default function ProjectsPreview() {
                                 {project.tech.map((t) => (
                                     <span
                                         key={t}
-                                        className="font-mono text-[11px] text-[#E05A47]-soft bg-[#E05A47]-dim rounded-md px-2 py-1"
+                                        className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]/10 rounded-md px-2 py-1"
                                     >
                                         {t}
                                     </span>
@@ -162,3 +162,4 @@ export default function ProjectsPreview() {
         </section>
     );
 }
+

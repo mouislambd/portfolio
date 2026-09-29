@@ -77,27 +77,27 @@ export default function Hero() {
                         variants={item}
                         className="mt-10 grid grid-cols-3 gap-px bg-[#1A202C]-line rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
                     >
-                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
+                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
+                            <div className="text-[#E05A47] text-lg sm:text-xl font-medium">
                                 9+
                             </div>
-                            <div className="text-[#718096] text-[11px] mt-1">
+                            <div className="text-[#1A202C] text-[11px] mt-1">
                                 projects shipped
                             </div>
                         </div>
-                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
+                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
                             <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
                                 MERN
                             </div>
-                            <div className="text-[#718096] text-[11px] mt-1">
+                            <div className="text-[#4A5568] text-[11px] mt-1">
                                 core stack
                             </div>
                         </div>
-                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-[#E05A47]-soft text-lg sm:text-xl font-medium">
+                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
+                            <div className="text-[#31AAA9] text-lg sm:text-xl font-medium">
                                 Open
                             </div>
-                            <div className="text-[#718096] text-[11px] mt-1">
+                            <div className="text-[#4A5568] text-[11px] mt-1">
                                 to work
                             </div>
                         </div>
@@ -135,3 +135,4 @@ export default function Hero() {
         </section>
     );
 }
+
