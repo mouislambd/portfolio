@@ -39,14 +39,14 @@ export default function AdminLoginPage() {
         <section className="relative min-h-screen flex items-center justify-center px-6">
             <form
                 onSubmit={handleSubmit}
-                className="w-full max-w-sm flex flex-col gap-5 bg-ink-card border border-ink-line rounded-2xl p-8"
+                className="w-full max-w-sm flex flex-col gap-5 bg-white border border-[#1A202C]/15 rounded-2xl p-8"
             >
-                <h1 className="font-display text-2xl font-medium text-text-primary text-center mb-2">
+                <h1 className="font-display text-2xl font-medium text-[#1A202C] text-center mb-2">
                     Admin Login
                 </h1>
 
                 <div>
-                    <label className="block text-xs font-mono text-text-muted mb-2">
+                    <label className="block text-xs font-mono text-[#718096] mb-2">
                         EMAIL
                     </label>
                     <input
@@ -54,12 +54,12 @@ export default function AdminLoginPage() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-ink border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                        className="w-full bg-[#1A202C] border border-[#1A202C]/15 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-xs font-mono text-text-muted mb-2">
+                    <label className="block text-xs font-mono text-[#718096] mb-2">
                         PASSWORD
                     </label>
                     <input
@@ -67,16 +67,16 @@ export default function AdminLoginPage() {
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="w-full bg-ink border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                        className="w-full bg-[#1A202C] border border-[#1A202C]/15 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                     />
                 </div>
 
-                {error && <p className="text-coral-soft text-sm">{error}</p>}
+                {error && <p className="text-[#E05A47]/80 text-sm">{error}</p>}
 
                 <button
                     type="submit"
                     disabled={loading}
-                    className="bg-coral text-ink font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 disabled:opacity-50 transition-opacity"
+                    className="bg-[#E05A47] text-[#FDFBF7] font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 disabled:opacity-50 transition-opacity"
                 >
                     {loading ? 'Logging in...' : 'Login'}
                 </button>

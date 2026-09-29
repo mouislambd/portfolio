@@ -27,7 +27,7 @@ export default function NotFound() {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
             <div
-                className="absolute -top-40 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-coral opacity-10 blur-3xl pointer-events-none"
+                className="absolute -top-40 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
 
@@ -39,7 +39,7 @@ export default function NotFound() {
             >
                 <motion.span
                     variants={item}
-                    className="block font-mono text-xs tracking-[0.2em] text-coral mb-6"
+                    className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-6"
                 >
                     — ERROR / 404
                 </motion.span>
@@ -48,27 +48,27 @@ export default function NotFound() {
                     variants={item}
                     className="flex items-center justify-center gap-4 mb-6"
                 >
-                    <span className="font-display text-6xl sm:text-7xl font-medium text-text-primary">
+                    <span className="font-display text-6xl sm:text-7xl font-medium text-[#1A202C]">
                         4
                     </span>
-                    <div className="w-14 h-14 rounded-full bg-coral-dim flex items-center justify-center">
-                        <FiCompass className="text-coral" size={26} />
+                    <div className="w-14 h-14 rounded-full bg-[#E05A47]/10 flex items-center justify-center">
+                        <FiCompass className="text-[#E05A47]" size={26} />
                     </div>
-                    <span className="font-display text-6xl sm:text-7xl font-medium text-text-primary">
+                    <span className="font-display text-6xl sm:text-7xl font-medium text-[#1A202C]">
                         4
                     </span>
                 </motion.div>
 
                 <motion.h1
                     variants={item}
-                    className="font-display text-xl sm:text-2xl font-medium text-text-primary mb-3"
+                    className="font-display text-xl sm:text-2xl font-medium text-[#1A202C] mb-3"
                 >
                     This page doesn&apos;t exist
                 </motion.h1>
 
                 <motion.p
                     variants={item}
-                    className="text-text-secondary text-sm sm:text-base mb-10"
+                    className="text-[#4A5568] text-sm sm:text-base mb-10"
                 >
                     The page you&apos;re looking for might have been moved, renamed,
                     or never existed in the first place.
@@ -77,7 +77,7 @@ export default function NotFound() {
                 <motion.div variants={item}>
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-2 bg-coral text-ink font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 transition-opacity focus-ring"
+                        className="inline-flex items-center gap-2 bg-[#E05A47] text-[#FDFBF7] font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 transition-opacity focus-ring"
                     >
                         <FiArrowLeft size={16} />
                         Back to Home
