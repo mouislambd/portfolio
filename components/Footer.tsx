@@ -1,5 +1,8 @@
+'use client';
 import Link from 'next/link';
+import { useState } from 'react';
 import { FiGithub, FiLinkedin, FiArrowUpRight, FiMail, FiPhone, FiDownload } from 'react-icons/fi';
+import AdminModal from './AdminModal';
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -26,6 +29,18 @@ const socialLinks = [
 
 export default function Footer() {
     const year = new Date().getFullYear();
+    const [footerClick, setFooterClick] = useState(0);
+    const [adminOpen, setAdminOpen] = useState(false);
+
+    const handleCopyrightClick = () => {
+        const newCount = footerClick + 1;
+        if (newCount >= 7) {
+            setAdminOpen(true);
+            setFooterClick(0);
+        } else {
+            setFooterClick(newCount);
+        }
+    };
 
     return (
         <footer className="relative border-t border-ink-line px-6 py-14">
@@ -110,14 +125,18 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-12 pt-6 border-t border-ink-line flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <span className="font-mono text-[11px] text-text-muted">
+                    <p
+                        className="font-mono text-[11px] text-text-muted cursor-pointer"
+                        onClick={handleCopyrightClick}
+                    >
                         © {year} Kanich Fatema Mou. All rights reserved.
-                    </span>
+                    </p>
                     <span className="font-mono text-[11px] text-text-muted">
                         Built with Next.js &amp; Tailwind CSS
                     </span>
                 </div>
             </div>
+            {adminOpen && <AdminModal onClose={() => setAdminOpen(false)} />}
         </footer>
     );
 }
