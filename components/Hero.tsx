@@ -78,7 +78,7 @@ export default function Hero() {
                         className="mt-10 grid grid-cols-3 gap-px border-[#1A202C]/15 rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
                     >
                         <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-[#E05A47] text-lg sm:text-xl font-medium">
+                            <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
                                 9+
                             </div>
                             <div className="text-[#1A202C] text-[11px] mt-1">
@@ -94,7 +94,7 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-[#31AAA9] text-lg sm:text-xl font-medium">
+                            <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
                                 Open
                             </div>
                             <div className="text-[#4A5568] text-[11px] mt-1">
