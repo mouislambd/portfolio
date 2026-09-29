@@ -68,14 +68,14 @@ export default function Hero() {
                         <span className="text-[#4A5568] text-sm sm:text-base">
                             Future Data Scientist
                         </span>
-                        <span className="text-[#E05A47]-soft text-sm sm:text-base">
+                        <span className="text-[#E05A47]/80 text-sm sm:text-base">
                             Aspiring AI Engineer, In sha Allah
                         </span>
                     </motion.div>
 
                     <motion.div
                         variants={item}
-                        className="mt-10 grid grid-cols-3 gap-px bg-[#1A202C]-line rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
+                        className="mt-10 grid grid-cols-3 gap-px border-[#1A202C]/15 rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
                     >
                         <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
                             <div className="text-[#E05A47] text-lg sm:text-xl font-medium">
@@ -120,7 +120,7 @@ export default function Hero() {
                     animate="show"
                     className="relative"
                 >
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl  border-4 border-[#E05A47] bg-[#1A202C]-card shadow-xl shadow-coral/20">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl  border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
                         <Image
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"
@@ -135,4 +135,5 @@ export default function Hero() {
         </section>
     );
 }
+
 

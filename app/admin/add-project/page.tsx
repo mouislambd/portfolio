@@ -77,7 +77,7 @@ export default function AddProjectPage() {
                             required
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="BiblioDrop"
                         />
                     </div>
@@ -91,7 +91,7 @@ export default function AddProjectPage() {
                             rows={3}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors resize-none"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors resize-none"
                             placeholder="Full-stack book delivery management system"
                         />
                     </div>
@@ -104,7 +104,7 @@ export default function AddProjectPage() {
                             required
                             value={tech}
                             onChange={(e) => setTech(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="Next.js, Express, MongoDB, Stripe"
                         />
                     </div>
@@ -116,7 +116,7 @@ export default function AddProjectPage() {
                         <input
                             value={liveLink}
                             onChange={(e) => setLiveLink(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="https://bibliodrop.vercel.app"
                         />
                     </div>
@@ -128,7 +128,7 @@ export default function AddProjectPage() {
                         <input
                             value={githubLink}
                             onChange={(e) => setGithubLink(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="https://github.com/mouislambd/bibliodrop"
                         />
                     </div>
@@ -140,7 +140,7 @@ export default function AddProjectPage() {
                         <input
                             value={previewImage}
                             onChange={(e) => setPreviewImage(e.target.value)}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="/images/bibliodrop-preview.png"
                         />
                     </div>
@@ -154,14 +154,15 @@ export default function AddProjectPage() {
                     </button>
 
                     {status === 'success' && (
-                        <p className="text-[#E05A47]-soft text-sm">Project added successfully!</p>
+                        <p className="text-[#E05A47]/80 text-sm">Project added successfully!</p>
                     )}
                     {status === 'error' && (
-                        <p className="text-[#E05A47]-soft text-sm">Something went wrong. Try again.</p>
+                        <p className="text-[#E05A47]/80 text-sm">Something went wrong. Try again.</p>
                     )}
                 </form>
             </div>
         </section>
     );
 }
+
 

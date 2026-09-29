@@ -73,7 +73,7 @@ export default function Education() {
                 {/* Institution Card */}
                 <motion.div
                     variants={item}
-                    className="bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 mb-8"
+                    className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 mb-8"
                 >
                     <div className="flex items-start gap-4">
                         <div className="w-11 h-11 rounded-xl bg-[#E05A47]-dim flex items-center justify-center shrink-0">
@@ -100,20 +100,20 @@ export default function Education() {
                     </h3>
 
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-start gap-4 bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl p-5">
+                        <div className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5">
                             <span className="w-2 h-2 rounded-full bg-[#E05A47] mt-2 shrink-0" />
                             <div>
                                 <p className="text-[#1A202C] text-sm sm:text-base font-medium">
                                     Web Development — Programming Hero
                                 </p>
-                                <p className="text-[#E05A47]-soft text-xs mt-1 font-mono">
+                                <p className="text-[#E05A47]/80 text-xs mt-1 font-mono">
                                     Completed
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4 bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl p-5">
-                            <span className="w-2 h-2 rounded-full bg-[#1A202C]-line mt-2 shrink-0" />
+                        <div className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5">
+                            <span className="w-2 h-2 rounded-full border-[#1A202C]/15 mt-2 shrink-0" />
                             <div>
                                 <p className="text-[#1A202C] text-sm sm:text-base font-medium">
                                     Data Science
@@ -139,11 +139,11 @@ export default function Education() {
                             {programmingLanguages.map((lang) => (
                                 <div
                                     key={lang.name}
-                                    className="flex items-center justify-between bg-[#1A202C]-card border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
+                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
                                 >
                                     <span className="text-[#1A202C] text-sm">{lang.name}</span>
                                     {lang.note && (
-                                        <span className="text-[#E05A47]-soft text-[11px] font-mono">
+                                        <span className="text-[#E05A47]/80 text-[11px] font-mono">
                                             {lang.note}
                                         </span>
                                     )}
@@ -163,7 +163,7 @@ export default function Education() {
                             {spokenLanguages.map((lang) => (
                                 <div
                                     key={lang.name}
-                                    className="flex items-center justify-between bg-[#1A202C]-card border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
+                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
                                 >
                                     <span className="text-[#1A202C] text-sm">{lang.name}</span>
                                     <span className="text-[#718096] text-[11px] font-mono">
@@ -190,4 +190,5 @@ export default function Education() {
         </section>
     );
 }
+
 

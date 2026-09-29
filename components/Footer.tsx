@@ -57,7 +57,7 @@ export default function Footer() {
                         <div className="flex flex-wrap items-center gap-4 mt-5">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]-soft hover:text-[#E05A47] transition-colors focus-ring"
+                                className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]/80 hover:text-[#E05A47] transition-colors focus-ring"
                             >
                                 Get in touch
                                 <FiArrowUpRight size={14} />
@@ -114,7 +114,7 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={social.name}
-                                        className={`flex items-center justify-center w-10 h-10 rounded-full bg-[#1A202C]-card border border-[#1A202C]/10 text-[#4A5568] transition-all duration-300 hover:scale-110 hover:border-transparent focus-ring ${social.hoverColor}`}
+                                        className={`flex items-center justify-center w-10 h-10 rounded-full bg-white border border-[#1A202C]/10 text-[#4A5568] transition-all duration-300 hover:scale-110 hover:border-transparent focus-ring ${social.hoverColor}`}
                                     >
                                         <Icon size={18} />
                                     </a>
@@ -140,5 +140,6 @@ export default function Footer() {
         </footer>
     );
 }
+
 
 

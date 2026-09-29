@@ -91,7 +91,7 @@ export default function About() {
                         Data Scientist and AI Engineer 
                         Insha-allah
                     </p>
-                    <p className="text-[#E05A47]-soft">
+                    <p className="text-[#E05A47]/80">
                         I believe in shipping code, learning in public, and letting
                         projects speak louder than words.
                     </p>
@@ -99,7 +99,7 @@ export default function About() {
 
                 <motion.div
                     variants={item}
-                    className="mt-10 inline-flex flex-col gap-2 bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-5 py-4"
+                    className="mt-10 inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4"
                 >
                     <span className="font-mono text-[11px] tracking-wide text-[#E05A47]">
                         CURRENTLY LEARNING
@@ -120,7 +120,7 @@ export default function About() {
                                 <div className="flex flex-col items-center">
                                     <span className="w-2 h-2 rounded-full bg-[#E05A47] shrink-0 mt-1.5" />
                                     {index !== timeline.length - 1 && (
-                                        <span className="w-px flex-1 bg-[#1A202C]-line my-1" />
+                                        <span className="w-px flex-1 border-[#1A202C]/15 my-1" />
                                     )}
                                 </div>
                                 <div className="pb-10">
@@ -142,4 +142,5 @@ export default function About() {
         </section>
     );
 }
+
 

@@ -106,7 +106,7 @@ export default function Projects() {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="Search projects..."
-                        className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl pl-10 pr-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
+                        className="w-full bg-white border border-[#1A202C]/10 rounded-xl pl-10 pr-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                     />
                 </motion.div>
 
@@ -124,10 +124,10 @@ export default function Projects() {
                                     exit={{ opacity: 0, scale: 0.96 }}
                                     transition={{ duration: 0.3 }}
                                     whileHover={{ y: -4 }}
-                                    className="bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
+                                    className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                                 >
                                     <div className="w-full h-36 rounded-xl bg-gradient-to-br from-coral/20 via-ink to-ink mb-5 flex items-center justify-center">
-                                        <span className="font-display text-2xl text-[#E05A47]-soft">
+                                        <span className="font-display text-2xl text-[#E05A47]/80">
                                             {project.title}
                                         </span>
                                     </div>
@@ -143,7 +143,7 @@ export default function Projects() {
                                         {project.tech.map((t) => (
                                             <span
                                                 key={t}
-                                                className="font-mono text-[11px] text-[#E05A47]-soft bg-[#E05A47]-dim rounded-md px-2 py-1"
+                                                className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]-dim rounded-md px-2 py-1"
                                             >
                                                 {t}
                                             </span>
@@ -186,4 +186,5 @@ export default function Projects() {
         </section>
     );
 }
+
 

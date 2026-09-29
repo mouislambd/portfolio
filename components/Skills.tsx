@@ -136,9 +136,9 @@ export default function Skills() {
                     variants={item}
                     whileHover={{ y: -4, scale: 1.02 }}
                     transition={{ duration: 0.2 }}
-                    className="flex flex-col items-start gap-3 bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl px-5 py-6 cursor-default transition-colors duration-200 hover:border-[#E05A47] hover:bg-[#E05A47]-dim"
+                    className="flex flex-col items-start gap-3 bg-white border border-[#1A202C]/10 rounded-2xl px-5 py-6 cursor-default transition-colors duration-200 hover:border-[#E05A47] hover:bg-[#E05A47]-dim"
                   >
-                    <Icon className="text-[#E05A47]-soft shrink-0" size={28} />
+                    <Icon className="text-[#E05A47]/80 shrink-0" size={28} />
                     <span className="text-[#1A202C] text-sm sm:text-base font-medium">
                       {skill.name}
                     </span>
@@ -152,4 +152,5 @@ export default function Skills() {
         </section>
     );
 }
+
 

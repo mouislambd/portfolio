@@ -116,7 +116,7 @@ export default function Contact() {
                             type="text"
                             name="name"
                             required
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="Your name"
                         />
                     </div>
@@ -133,7 +133,7 @@ export default function Contact() {
                             type="email"
                             name="email"
                             required
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="you@example.com"
                         />
                     </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                             name="message"
                             required
                             rows={5}
-                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
+                            className="w-full bg-white border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="Tell me about the opportunity..."
                         />
                     </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                     </button>
 
                     {status === 'error' && (
-                        <p className="text-[#E05A47]-soft text-sm">
+                        <p className="text-[#E05A47]/80 text-sm">
                             delivary your message  insha-allah
                         </p>
                     )}
@@ -210,4 +210,5 @@ export default function Contact() {
         </section>
     );
 }
+
 
