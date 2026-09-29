@@ -43,21 +43,21 @@ export default function Footer() {
     };
 
     return (
-        <footer className="relative border-t border-ink-line px-6 py-14">
+        <footer className="relative border-t border-[#1A202C]/10 px-6 py-14">
             <div className="max-w-5xl mx-auto">
                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10">
                     <div>
-                        <span className="block font-mono text-xs tracking-[0.2em] text-coral mb-3">
+                        <span className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-3">
                             KANICH FATEMA MOU
                         </span>
-                        <h3 className="font-display text-xl sm:text-2xl font-medium text-text-primary max-w-sm leading-snug">
+                        <h3 className="font-display text-xl sm:text-2xl font-medium text-[#1A202C] max-w-sm leading-snug">
                             Let&apos;s build something worth shipping.
                         </h3>
 
                         <div className="flex flex-wrap items-center gap-4 mt-5">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-1.5 text-sm text-coral-soft hover:text-coral transition-colors focus-ring"
+                                className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]-soft hover:text-[#E05A47] transition-colors focus-ring"
                             >
                                 Get in touch
                                 <FiArrowUpRight size={14} />
@@ -66,7 +66,7 @@ export default function Footer() {
                             <a
                                 href="/cv.pdf"
                                 download
-                                className="inline-flex items-center gap-1.5 text-sm bg-coral text-ink font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity focus-ring"
+                                className="inline-flex items-center gap-1.5 text-sm bg-[#E05A47] text-[#FDFBF7] font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity focus-ring"
                             >
                                 <FiDownload size={14} />
                                 Download CV
@@ -76,14 +76,14 @@ export default function Footer() {
                         <div className="flex flex-col gap-2 mt-6">
                             <a
                                 href="mailto:kanichfatema@outlook.com"
-                                className="flex items-center gap-2 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                                className="flex items-center gap-2 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                             >
                                 <FiMail size={14} />
                                 kanichfatema@outlook.com
                             </a>
                             <a
                                 href="tel:YOUR_PHONE_NUMBER"
-                                className="flex items-center gap-2 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                                className="flex items-center gap-2 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                             >
                                 <FiPhone size={14} />
                                 Number: +880 1317592043
@@ -97,7 +97,7 @@ export default function Footer() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                                    className="text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                                 >
                                     {link.name}
                                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={social.name}
-                                        className={`flex items-center justify-center w-10 h-10 rounded-full bg-ink-card border border-ink-line text-text-secondary transition-all duration-300 hover:scale-110 hover:border-transparent focus-ring ${social.hoverColor}`}
+                                        className={`flex items-center justify-center w-10 h-10 rounded-full bg-[#1A202C]-card border border-[#1A202C]/10 text-[#4A5568] transition-all duration-300 hover:scale-110 hover:border-transparent focus-ring ${social.hoverColor}`}
                                     >
                                         <Icon size={18} />
                                     </a>
@@ -124,14 +124,14 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-12 pt-6 border-t border-ink-line flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="mt-12 pt-6 border-t border-[#1A202C]/10 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p
-                        className="font-mono text-[11px] text-text-muted cursor-pointer"
+                        className="font-mono text-[11px] text-[#718096] cursor-pointer"
                         onClick={handleCopyrightClick}
                     >
                         © {year} Kanich Fatema Mou. All rights reserved.
                     </p>
-                    <span className="font-mono text-[11px] text-text-muted">
+                    <span className="font-mono text-[11px] text-[#718096]">
                         Built with Next.js &amp; Tailwind CSS
                     </span>
                 </div>
@@ -140,3 +140,4 @@ export default function Footer() {
         </footer>
     );
 }
+

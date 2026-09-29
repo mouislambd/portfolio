@@ -36,7 +36,7 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6">
             <div
-                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-coral opacity-10 blur-3xl pointer-events-none"
+                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
 
@@ -44,14 +44,14 @@ export default function Hero() {
                 <motion.div variants={container} initial="hidden" animate="show">
                     <motion.span
                         variants={item}
-                        className="block font-mono text-xs tracking-[0.2em] text-coral mb-4"
+                        className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
                     >
 
                     </motion.span>
 
                     <motion.h1
                         variants={item}
-                        className="font-display text-4xl sm:text-5xl md:text-[52px] font-medium leading-[1.05] tracking-tight text-text-primary"
+                        className="font-display text-4xl sm:text-5xl md:text-[52px] font-medium leading-[1.05] tracking-tight text-[#1A202C]"
                     >
                         Kanich
                         <br />
@@ -60,44 +60,44 @@ export default function Hero() {
 
                     <motion.div
                         variants={item}
-                        className="mt-8 border-l-2 border-coral/40 pl-5 flex flex-col gap-1"
+                        className="mt-8 border-l-2 border-[#E05A47]/40 pl-5 flex flex-col gap-1"
                     >
-                        <span className="text-text-primary text-sm sm:text-base">
+                        <span className="text-[#1A202C] text-sm sm:text-base">
                             Full Stack Developer
                         </span>
-                        <span className="text-text-secondary text-sm sm:text-base">
+                        <span className="text-[#4A5568] text-sm sm:text-base">
                             Future Data Scientist
                         </span>
-                        <span className="text-coral-soft text-sm sm:text-base">
+                        <span className="text-[#E05A47]-soft text-sm sm:text-base">
                             Aspiring AI Engineer, In sha Allah
                         </span>
                     </motion.div>
 
                     <motion.div
                         variants={item}
-                        className="mt-10 grid grid-cols-3 gap-px bg-ink-line rounded-xl overflow-hidden border border-ink-line max-w-lg"
+                        className="mt-10 grid grid-cols-3 gap-px bg-[#1A202C]-line rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
                     >
-                        <div className="bg-ink-card px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-text-primary text-lg sm:text-xl font-medium">
+                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
+                            <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
                                 9+
                             </div>
-                            <div className="text-text-muted text-[11px] mt-1">
+                            <div className="text-[#718096] text-[11px] mt-1">
                                 projects shipped
                             </div>
                         </div>
-                        <div className="bg-ink-card px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-text-primary text-lg sm:text-xl font-medium">
+                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
+                            <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
                                 MERN
                             </div>
-                            <div className="text-text-muted text-[11px] mt-1">
+                            <div className="text-[#718096] text-[11px] mt-1">
                                 core stack
                             </div>
                         </div>
-                        <div className="bg-ink-card px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-coral-soft text-lg sm:text-xl font-medium">
+                        <div className="bg-[#1A202C]-card px-4 py-4 sm:px-5 sm:py-5">
+                            <div className="text-[#E05A47]-soft text-lg sm:text-xl font-medium">
                                 Open
                             </div>
-                            <div className="text-text-muted text-[11px] mt-1">
+                            <div className="text-[#718096] text-[11px] mt-1">
                                 to work
                             </div>
                         </div>
@@ -105,7 +105,7 @@ export default function Hero() {
 
                     <motion.div variants={item} className="mt-12 max-w-lg">
                         <motion.span
-                            className="font-mono text-[11px] tracking-wide text-text-muted flex items-center gap-2"
+                            className="font-mono text-[11px] tracking-wide text-[#718096] flex items-center gap-2"
                             animate={{ y: [0, 4, 0] }}
                             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                         >
@@ -120,7 +120,7 @@ export default function Hero() {
                     animate="show"
                     className="relative"
                 >
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl  border-4 border-coral bg-ink-card shadow-xl shadow-coral/20">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl  border-4 border-[#E05A47] bg-[#1A202C]-card shadow-xl shadow-coral/20">
                         <Image
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"

@@ -64,7 +64,7 @@ export default function Projects() {
     return (
         <section className="relative min-h-screen px-6 pt-32 pb-24 overflow-hidden">
             <div
-                className="absolute -top-40 -right-20 w-[420px] h-[420px] rounded-full bg-coral opacity-10 blur-3xl pointer-events-none"
+                className="absolute -top-40 -right-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
 
@@ -76,21 +76,21 @@ export default function Projects() {
             >
                 <motion.span
                     variants={item}
-                    className="block font-mono text-xs tracking-[0.2em] text-coral mb-4"
+                    className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
                 >
                     INDEX / 004
                 </motion.span>
 
                 <motion.h1
                     variants={item}
-                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-text-primary mb-4"
+                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-4"
                 >
                     Projects
                 </motion.h1>
 
                 <motion.p
                     variants={item}
-                    className="text-text-secondary text-sm sm:text-base max-w-xl mb-8"
+                    className="text-[#4A5568] text-sm sm:text-base max-w-xl mb-8"
                 >
                     Search by name, tech, or keyword e.g. try javascript or
                     mongodb.
@@ -98,7 +98,7 @@ export default function Projects() {
 
                 <motion.div variants={item} className="relative max-w-md mb-12">
                     <FiSearch
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-[#718096]"
                         size={16}
                     />
                     <input
@@ -106,12 +106,12 @@ export default function Projects() {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="Search projects..."
-                        className="w-full bg-ink-card border border-ink-line rounded-xl pl-10 pr-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-ring focus:border-coral/50 outline-none transition-colors"
+                        className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl pl-10 pr-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                     />
                 </motion.div>
 
                 {loading ? (
-                    <p className="text-text-muted text-sm">Loading projects...</p>
+                    <p className="text-[#718096] text-sm">Loading projects...</p>
                 ) : (
                     <motion.div layout className="grid sm:grid-cols-2 gap-5">
                         <AnimatePresence mode="popLayout">
@@ -124,18 +124,18 @@ export default function Projects() {
                                     exit={{ opacity: 0, scale: 0.96 }}
                                     transition={{ duration: 0.3 }}
                                     whileHover={{ y: -4 }}
-                                    className="bg-ink-card border border-ink-line rounded-2xl p-6 transition-colors hover:border-coral/40"
+                                    className="bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                                 >
                                     <div className="w-full h-36 rounded-xl bg-gradient-to-br from-coral/20 via-ink to-ink mb-5 flex items-center justify-center">
-                                        <span className="font-display text-2xl text-coral-soft">
+                                        <span className="font-display text-2xl text-[#E05A47]-soft">
                                             {project.title}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-text-primary text-lg font-medium mb-1.5">
+                                    <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
                                         {project.title}
                                     </h3>
-                                    <p className="text-text-secondary text-sm mb-4">
+                                    <p className="text-[#4A5568] text-sm mb-4">
                                         {project.description}
                                     </p>
 
@@ -143,7 +143,7 @@ export default function Projects() {
                                         {project.tech.map((t) => (
                                             <span
                                                 key={t}
-                                                className="font-mono text-[11px] text-coral-soft bg-coral-dim rounded-md px-2 py-1"
+                                                className="font-mono text-[11px] text-[#E05A47]-soft bg-[#E05A47]-dim rounded-md px-2 py-1"
                                             >
                                                 {t}
                                             </span>
@@ -155,7 +155,7 @@ export default function Projects() {
                                             href={project.liveLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-1.5 text-sm text-text-primary hover:text-coral transition-colors focus-ring"
+                                            className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
                                         >
                                             <FiExternalLink size={14} />
                                             Live
@@ -165,7 +165,7 @@ export default function Projects() {
                                             href={project.githubLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                                            className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                                         >
                                             <FiGithub size={14} />
                                             Code
@@ -178,7 +178,7 @@ export default function Projects() {
                 )}
 
                 {!loading && filtered.length === 0 && (
-                    <p className="text-text-muted text-sm mt-8">
+                    <p className="text-[#718096] text-sm mt-8">
                         No projects match &quot;{query}&quot;.
                     </p>
                 )}

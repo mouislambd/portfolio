@@ -85,7 +85,7 @@ export default function Skills() {
     return (
         <section className="relative min-h-screen px-6 pt-32 pb-24 overflow-hidden">
             <div
-                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-coral opacity-10 blur-3xl pointer-events-none"
+                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
 
@@ -97,21 +97,21 @@ export default function Skills() {
             >
                 <motion.span
                     variants={item}
-                    className="block font-mono text-xs tracking-[0.2em] text-coral mb-4"
+                    className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
                 >
                     INDEX / 003
                 </motion.span>
 
                 <motion.h1
                     variants={item}
-                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-text-primary mb-4"
+                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-4"
                 >
                     Skills
                 </motion.h1>
 
                 <motion.p
                     variants={item}
-                    className="text-text-secondary text-sm sm:text-base max-w-xl mb-16"
+                    className="text-[#4A5568] text-sm sm:text-base max-w-xl mb-16"
                 >
                     A specialized selection of technologies I use to build robust and
                     scalable applications.
@@ -121,9 +121,9 @@ export default function Skills() {
                     <div key={group.title} className="mb-14">
                         <motion.h2
                             variants={item}
-                            className="font-mono text-sm tracking-[0.15em] text-coral uppercase mb-5 flex items-center gap-3"
+                            className="font-mono text-sm tracking-[0.15em] text-[#E05A47] uppercase mb-5 flex items-center gap-3"
                         >
-                            <span className="w-6 h-px bg-coral" />
+                            <span className="w-6 h-px bg-[#E05A47]" />
                             {group.title}
                         </motion.h2>
 
@@ -136,10 +136,10 @@ export default function Skills() {
                     variants={item}
                     whileHover={{ y: -4, scale: 1.02 }}
                     transition={{ duration: 0.2 }}
-                    className="flex flex-col items-start gap-3 bg-ink-card border border-ink-line rounded-2xl px-5 py-6 cursor-default transition-colors duration-200 hover:border-coral hover:bg-coral-dim"
+                    className="flex flex-col items-start gap-3 bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl px-5 py-6 cursor-default transition-colors duration-200 hover:border-[#E05A47] hover:bg-[#E05A47]-dim"
                   >
-                    <Icon className="text-coral-soft shrink-0" size={28} />
-                    <span className="text-text-primary text-sm sm:text-base font-medium">
+                    <Icon className="text-[#E05A47]-soft shrink-0" size={28} />
+                    <span className="text-[#1A202C] text-sm sm:text-base font-medium">
                       {skill.name}
                     </span>
                   </motion.div>

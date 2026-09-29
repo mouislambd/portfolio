@@ -56,7 +56,7 @@ export default function Contact() {
     return (
         <section className="relative min-h-screen px-6 pt-32 pb-24 overflow-hidden">
             <div
-                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-coral opacity-10 blur-3xl pointer-events-none"
+                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
 
@@ -68,21 +68,21 @@ export default function Contact() {
             >
                 <motion.span
                     variants={item}
-                    className="block font-mono text-xs tracking-[0.2em] text-coral mb-4"
+                    className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
                 >
                     INDEX / 005
                 </motion.span>
 
                 <motion.h1
                     variants={item}
-                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-text-primary mb-4"
+                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-4"
                 >
                     Contact
                 </motion.h1>
 
                 <motion.p
                     variants={item}
-                    className="text-text-secondary text-sm sm:text-base max-w-lg mb-12"
+                    className="text-[#4A5568] text-sm sm:text-base max-w-lg mb-12"
                 >
                     Have a role, project, or idea in mind? Send a message  it lands
                     directly in my inbox.
@@ -107,7 +107,7 @@ export default function Contact() {
                     <div>
                         <label
                             htmlFor="name"
-                            className="block text-xs font-mono text-text-muted mb-2"
+                            className="block text-xs font-mono text-[#718096] mb-2"
                         >
                             NAME
                         </label>
@@ -116,7 +116,7 @@ export default function Contact() {
                             type="text"
                             name="name"
                             required
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-ring focus:border-coral/50 outline-none transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="Your name"
                         />
                     </div>
@@ -124,7 +124,7 @@ export default function Contact() {
                     <div>
                         <label
                             htmlFor="email"
-                            className="block text-xs font-mono text-text-muted mb-2"
+                            className="block text-xs font-mono text-[#718096] mb-2"
                         >
                             EMAIL
                         </label>
@@ -133,7 +133,7 @@ export default function Contact() {
                             type="email"
                             name="email"
                             required
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-ring focus:border-coral/50 outline-none transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="you@example.com"
                         />
                     </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                     <div>
                         <label
                             htmlFor="message"
-                            className="block text-xs font-mono text-text-muted mb-2"
+                            className="block text-xs font-mono text-[#718096] mb-2"
                         >
                             MESSAGE
                         </label>
@@ -150,7 +150,7 @@ export default function Contact() {
                             name="message"
                             required
                             rows={5}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-ring focus:border-coral/50 outline-none transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] placeholder:text-[#718096] focus-ring focus:border-[#E05A47]/50 outline-none transition-colors"
                             placeholder="Tell me about the opportunity..."
                         />
                     </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="flex items-center justify-center gap-2 bg-coral text-ink font-medium text-sm rounded-xl px-6 py-3.5 transition-opacity hover:opacity-90 disabled:opacity-50 focus-ring mt-2"
+                        className="flex items-center justify-center gap-2 bg-[#E05A47] text-[#FDFBF7] font-medium text-sm rounded-xl px-6 py-3.5 transition-opacity hover:opacity-90 disabled:opacity-50 focus-ring mt-2"
                     >
                         {status === 'success' ? (
                             <>
@@ -176,7 +176,7 @@ export default function Contact() {
                     </button>
 
                     {status === 'error' && (
-                        <p className="text-coral-soft text-sm">
+                        <p className="text-[#E05A47]-soft text-sm">
                             delivary your message  insha-allah
                         </p>
                     )}
@@ -184,13 +184,13 @@ export default function Contact() {
 
                 <motion.div
                     variants={item}
-                    className="mt-16 pt-8 border-t border-ink-line flex items-center gap-6"
+                    className="mt-16 pt-8 border-t border-[#1A202C]/10 flex items-center gap-6"
                 >
                     <a
                         href="https://github.com/mouislambd"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                        className="flex items-center gap-2 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                     >
                         <FiGithub size={16} />
                         GitHub
@@ -200,7 +200,7 @@ export default function Contact() {
                         href="https://www.linkedin.com/in/kanich-fatimah-mou"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                        className="flex items-center gap-2 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                     >
                         <FiLinkedin size={16} />
                         LinkedIn

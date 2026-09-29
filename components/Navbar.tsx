@@ -39,14 +39,14 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-ink/80 backdrop-blur-md border-b border-ink-line'
+          ? 'bg-[#1A202C]/80 backdrop-blur-md border-b border-[#1A202C]/10'
           : 'bg-transparent border-b border-transparent'
           }`}
       >
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
           <Link
             href="/"
-            className="font-mono text-sm tracking-wider text-text-primary focus-ring"
+            className="font-mono text-sm tracking-wider text-[#1A202C] focus-ring"
           >
             Kanich Fatema Mou
           </Link>
@@ -58,14 +58,14 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`relative text-sm font-mono tracking-wide transition-colors focus-ring ${active ? 'text-coral' : 'text-text-secondary hover:text-text-primary'
+                    className={`relative text-sm font-mono tracking-wide transition-colors focus-ring ${active ? 'text-[#E05A47]' : 'text-[#4A5568] hover:text-[#1A202C]'
                       }`}
                   >
                     {link.name}
                     {active && (
                       <motion.span
                         layoutId="active-nav"
-                        className="absolute -bottom-2 left-0 right-0 h-[1.5px] bg-coral"
+                        className="absolute -bottom-2 left-0 right-0 h-[1.5px] bg-[#E05A47]"
                       />
                     )}
                   </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-text-primary focus-ring"
+            className="md:hidden text-[#1A202C] focus-ring"
             aria-label="Open menu"
           >
             <FiMenu size={22} />
@@ -90,12 +90,12 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-ink/95 backdrop-blur-lg md:hidden"
+            className="fixed inset-0 z-[60] bg-[#1A202C]/95 backdrop-blur-lg md:hidden"
           >
             <div className="flex justify-end px-6 py-5">
               <button
                 onClick={() => setMenuOpen(false)}
-                className="text-text-primary focus-ring"
+                className="text-[#1A202C] focus-ring"
                 aria-label="Close menu"
               >
                 <FiX size={24} />
@@ -121,7 +121,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`font-display text-3xl ${pathname === link.href ? 'text-coral' : 'text-text-primary'
+                    className={`font-display text-3xl ${pathname === link.href ? 'text-[#E05A47]' : 'text-[#1A202C]'
                       }`}
                   >
                     {link.name}
@@ -139,7 +139,7 @@ export default function Navbar() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-coral transition-colors focus-ring"
+                    className="text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                     aria-label={social.name}
                   >
                     <Icon size={20} />

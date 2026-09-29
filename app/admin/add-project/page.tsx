@@ -57,12 +57,12 @@ export default function AddProjectPage() {
         <section className="relative min-h-screen px-6 pt-32 pb-24">
             <div className="max-w-xl mx-auto">
                 <div className="flex items-center justify-between mb-8">
-                    <h1 className="font-display text-2xl font-medium text-text-primary">
+                    <h1 className="font-display text-2xl font-medium text-[#1A202C]">
                         Add New Project
                     </h1>
                     <button
                         onClick={handleLogout}
-                        className="text-sm text-text-secondary hover:text-coral transition-colors"
+                        className="text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors"
                     >
                         Logout
                     </button>
@@ -70,20 +70,20 @@ export default function AddProjectPage() {
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             TITLE
                         </label>
                         <input
                             required
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="BiblioDrop"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             DESCRIPTION
                         </label>
                         <textarea
@@ -91,56 +91,56 @@ export default function AddProjectPage() {
                             rows={3}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors resize-none"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors resize-none"
                             placeholder="Full-stack book delivery management system"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             TECH (comma separated)
                         </label>
                         <input
                             required
                             value={tech}
                             onChange={(e) => setTech(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="Next.js, Express, MongoDB, Stripe"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             LIVE LINK
                         </label>
                         <input
                             value={liveLink}
                             onChange={(e) => setLiveLink(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="https://bibliodrop.vercel.app"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             GITHUB LINK
                         </label>
                         <input
                             value={githubLink}
                             onChange={(e) => setGithubLink(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="https://github.com/mouislambd/bibliodrop"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-mono text-text-muted mb-2">
+                        <label className="block text-xs font-mono text-[#718096] mb-2">
                             PREVIEW IMAGE PATH (optional)
                         </label>
                         <input
                             value={previewImage}
                             onChange={(e) => setPreviewImage(e.target.value)}
-                            className="w-full bg-ink-card border border-ink-line rounded-xl px-4 py-3 text-sm text-text-primary outline-none focus:border-coral/50 transition-colors"
+                            className="w-full bg-[#1A202C]-card border border-[#1A202C]/10 rounded-xl px-4 py-3 text-sm text-[#1A202C] outline-none focus:border-[#E05A47]/50 transition-colors"
                             placeholder="/images/bibliodrop-preview.png"
                         />
                     </div>
@@ -148,16 +148,16 @@ export default function AddProjectPage() {
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="bg-coral text-ink font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 disabled:opacity-50 transition-opacity mt-2"
+                        className="bg-[#E05A47] text-[#FDFBF7] font-medium text-sm rounded-xl px-6 py-3 hover:opacity-90 disabled:opacity-50 transition-opacity mt-2"
                     >
                         {status === 'sending' ? 'Adding...' : 'Add Project'}
                     </button>
 
                     {status === 'success' && (
-                        <p className="text-coral-soft text-sm">Project added successfully!</p>
+                        <p className="text-[#E05A47]-soft text-sm">Project added successfully!</p>
                     )}
                     {status === 'error' && (
-                        <p className="text-coral-soft text-sm">Something went wrong. Try again.</p>
+                        <p className="text-[#E05A47]-soft text-sm">Something went wrong. Try again.</p>
                     )}
                 </form>
             </div>

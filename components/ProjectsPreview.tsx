@@ -55,7 +55,7 @@ export default function ProjectsPreview() {
     if (loading) {
         return (
             <section className="relative px-6 py-24">
-                <div className="max-w-5xl mx-auto text-text-muted text-sm">
+                <div className="max-w-5xl mx-auto text-[#718096] text-sm">
                     Loading projects...
                 </div>
             </section>
@@ -76,17 +76,17 @@ export default function ProjectsPreview() {
                     className="flex items-end justify-between mb-10"
                 >
                     <div>
-                        <span className="block font-mono text-xs tracking-[0.2em] text-coral mb-3">
+                        <span className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-3">
                             previw
                         </span>
-                        <h2 className="font-display text-2xl sm:text-3xl font-medium text-text-primary">
+                        <h2 className="font-display text-2xl sm:text-3xl font-medium text-[#1A202C]">
                             Selected Work
                         </h2>
                     </div>
 
                     <Link
                         href="/projects"
-                        className="hidden sm:flex items-center gap-1.5 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                        className="hidden sm:flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                     >
                         View all
                         <FiArrowRight size={14} />
@@ -99,18 +99,18 @@ export default function ProjectsPreview() {
                             key={project._id}
                             variants={item}
                             whileHover={{ y: -4 }}
-                            className="bg-ink-card border border-ink-line rounded-2xl p-6 transition-colors hover:border-coral/40"
+                            className="bg-[#1A202C]-card border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
                             <div className="w-full h-36 rounded-xl bg-gradient-to-br from-coral/20 via-ink to-ink mb-5 flex items-center justify-center">
-                                <span className="font-display text-2xl text-coral-soft">
+                                <span className="font-display text-2xl text-[#E05A47]-soft">
                                     {project.title}
                                 </span>
                             </div>
 
-                            <h3 className="text-text-primary text-lg font-medium mb-1.5">
+                            <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
                                 {project.title}
                             </h3>
-                            <p className="text-text-secondary text-sm mb-4">
+                            <p className="text-[#4A5568] text-sm mb-4">
                                 {project.description}
                             </p>
 
@@ -118,7 +118,7 @@ export default function ProjectsPreview() {
                                 {project.tech.map((t) => (
                                     <span
                                         key={t}
-                                        className="font-mono text-[11px] text-coral-soft bg-coral-dim rounded-md px-2 py-1"
+                                        className="font-mono text-[11px] text-[#E05A47]-soft bg-[#E05A47]-dim rounded-md px-2 py-1"
                                     >
                                         {t}
                                     </span>
@@ -130,7 +130,7 @@ export default function ProjectsPreview() {
                                     href={project.liveLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-text-primary hover:text-coral transition-colors focus-ring"
+                                    className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
                                 >
                                     <FiExternalLink size={14} />
                                     Live
@@ -139,7 +139,7 @@ export default function ProjectsPreview() {
                                     href={project.githubLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                                    className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                                 >
                                     <FiGithub size={14} />
                                     Code
@@ -152,7 +152,7 @@ export default function ProjectsPreview() {
                 <motion.div variants={item} className="flex sm:hidden justify-center mt-8">
                     <Link
                         href="/projects"
-                        className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-coral transition-colors focus-ring"
+                        className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                     >
                         View all projects
                         <FiArrowRight size={14} />
