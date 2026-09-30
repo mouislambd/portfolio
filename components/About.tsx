@@ -77,8 +77,8 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-10">
-                    <div className="space-y-6 text-[#4A5568] text-sm sm:text-base leading-relaxed order-2 md:order-1">
+                <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-16 md:gap-24 items-start mb-10">
+                    <div className="space-y-6 text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-2xl order-2 md:order-1">
                         <p>
                             CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
                             Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
@@ -94,12 +94,12 @@ export default function About() {
                         </p>
                     </div>
                     
-                    <div className="relative w-full max-w-sm h-80 sm:h-96 mx-auto md:mx-0 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 order-1 md:order-2">
+                    <div className="relative w-full md:w-72 h-80 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 order-1 md:order-2 shrink-0">
                         <Image
                             src="/images/2nd.jpeg"
                             alt="Kanich Fatema Mou"
                             fill
-                            sizes="(max-width: 768px) 100vw, 384px"
+                            sizes="(max-width: 768px) 100vw, 288px"
                             className="object-cover object-center"
                         />
                     </div>
