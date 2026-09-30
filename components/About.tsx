@@ -77,7 +77,7 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="flex flex-col md:flex-row items-center gap-16 mb-10">
+                <motion.div variants={item} className="flex flex-col md:flex-row items-center gap-24 mb-10">
                     <div className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed">
                         <p>
                             CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
