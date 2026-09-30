@@ -78,15 +78,6 @@ export default function About() {
                 </motion.h1>
  
                 <motion.div variants={item} className="flex flex-col md:flex-row items-center gap-10 mb-10">
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 shrink-0">
-                        <Image
-                            src="/images/2nd.jpeg"
-                            alt="Kanich Fatema Mou"
-                            fill
-                            sizes="(max-width: 768px) 256px, 288px"
-                            className="object-cover object-center"
-                        />
-                    </div>
                     <div className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed">
                         <p>
                             CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
@@ -101,6 +92,15 @@ export default function About() {
                             I believe in shipping code, learning in public, and letting
                             projects speak louder than words.
                         </p>
+                    </div>
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 shrink-0">
+                        <Image
+                            src="/images/2nd.jpeg"
+                            alt="Kanich Fatema Mou"
+                            fill
+                            sizes="(max-width: 768px) 256px, 288px"
+                            className="object-cover object-center"
+                        />
                     </div>
                 </motion.div>
  
