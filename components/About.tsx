@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
+import Image from 'next/image';
+ 
 const container = {
     hidden: {},
     show: {
@@ -11,7 +12,7 @@ const container = {
         },
     },
 };
-
+ 
 const item = {
     hidden: { opacity: 0, y: 20 },
     show: {
@@ -20,7 +21,7 @@ const item = {
         transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
-
+ 
 const timeline = [
     {
         year: '2023',
@@ -47,7 +48,7 @@ const timeline = [
             'Expected to complete my Computer Science & Technology diploma while continuing my journey in AI and Data Science.',
     },
 ];
-
+ 
 export default function About() {
     return (
         <section className="relative min-h-screen px-6 pt-32 pb-24 overflow-hidden">
@@ -55,7 +56,7 @@ export default function About() {
                 className="absolute -top-40 -right-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
-
+ 
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -68,14 +69,23 @@ export default function About() {
                 >
                     INDEX / 002
                 </motion.span>
-
+ 
                 <motion.h1
                     variants={item}
                     className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-8"
                 >
                     About Me
                 </motion.h1>
-
+ 
+                <motion.div variants={item} className="mb-10 w-full h-64 sm:h-80 relative overflow-hidden rounded-2xl shadow-xl">
+                    <Image
+                        src="/images/2nd.jpeg"
+                        alt="About Me"
+                        fill
+                        className="object-cover"
+                    />
+                </motion.div>
+ 
                 <motion.div variants={item} className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-2xl">
                     <p>
                         CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
@@ -96,7 +106,7 @@ export default function About() {
                         projects speak louder than words.
                     </p>
                 </motion.div>
-
+ 
                 <motion.div
                     variants={item}
                     className="mt-10 inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4"
@@ -108,12 +118,12 @@ export default function About() {
                         Python, Data Science &amp; Machine Learning fundamentals
                     </span>
                 </motion.div>
-
+ 
                 <motion.div variants={item} className="mt-16">
                     <h2 className="font-display text-xl sm:text-2xl font-medium text-[#1A202C] mb-8">
                         My Journey
                     </h2>
-
+ 
                     <div className="flex flex-col">
                         {timeline.map((point, index) => (
                             <div key={point.year} className="flex gap-6">
