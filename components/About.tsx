@@ -77,14 +77,14 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="relative">
+                <motion.div variants={item} className="flex justify-center mb-10">
                     <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
                         <Image
                             src="/images/2nd.jpeg"
                             alt="Kanich Fatema Mou"
                             fill
                             sizes="(max-width: 768px) 256px, 288px"
-                            className="object-cover object-left"
+                            className="object-cover object-center"
                         />
                     </div>
                 </motion.div>
