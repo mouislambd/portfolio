@@ -39,12 +39,32 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Fetch from API
         fetch('/api/projects')
             .then((res) => res.json())
             .then((data) => {
+                let apiProjects = [];
                 if (data.success) {
-                    setProjects(data.projects);
+                    apiProjects = data.projects;
                 }
+                
+                // Merge with localStorage projects
+                const saved = localStorage.getItem('projects');
+                const localProjects = saved ? JSON.parse(saved) : [];
+                
+                // Normalize local projects to match API structure
+                const normalizedLocal = localProjects.map((lp: any) => ({
+                    _id: lp.id?.toString() || Math.random().toString(),
+                    title: lp.title,
+                    description: lp.description,
+                    tech: lp.tags ? lp.tags.split(',') : [],
+                    liveLink: lp.live,
+                    githubLink: lp.github,
+                }));
+                
+                // Combine and remove duplicates based on title
+                const allProjects = [...apiProjects, ...normalizedLocal.filter((nl: any) => !apiProjects.find((ap: any) => ap.title === nl.title))];
+                setProjects(allProjects);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
