@@ -48,7 +48,10 @@ export default function Navbar() {
             href="/"
             className="group flex items-center gap-3 text-[#1A202C] focus-ring"
           >
-            <div className="hidden sm:flex flex-col justify-center leading-tight font-serif italic font-bold text-lg text-[#C84B31] transition-opacity group-hover:opacity-80">
+            <div 
+              className="hidden sm:flex flex-col justify-center leading-tight font-bold text-[#C84B31] transition-opacity group-hover:opacity-80"
+              style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.5rem' }}
+            >
               <span>Kanich</span>
               <span>Fatema Mou</span>
             </div>
