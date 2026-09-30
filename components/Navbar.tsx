@@ -46,9 +46,14 @@ export default function Navbar() {
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
           <Link
             href="/"
-            className="font-mono text-sm tracking-wider text-[#1A202C] focus-ring"
+            className="group flex items-center gap-3 text-[#1A202C] focus-ring"
           >
-            Kanich Fatema Mou
+            <div className="hidden sm:block font-serif text-lg tracking-tight font-medium transition-opacity group-hover:opacity-80">
+              Kanich Fatema Mou
+            </div>
+            <div className="bg-[#C84B31] text-white text-xs px-2 py-1 rounded-sm font-semibold tracking-wider transition-transform group-hover:scale-105">
+              KFM
+            </div>
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">
