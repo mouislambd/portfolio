@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import { Space_Grotesk, Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import Footer from '@/components/Footer';
@@ -22,6 +22,12 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500'],
 });
 
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  style: ['italic'],
+});
+
 export const metadata: Metadata = {
   title: 'Kanich Fatema Mou — Full Stack Developer',
   description:
@@ -36,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} font-body bg-[#FDFBF7] text-[#1A202C] antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} font-body bg-[#FDFBF7] text-[#1A202C] antialiased`}
       >
         <Navbar />
         {children}
