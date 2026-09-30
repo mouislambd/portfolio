@@ -120,31 +120,38 @@ export default function About() {
                 </motion.div>
  
                 <motion.div variants={item} className="mt-16">
-                    <h2 className="font-display text-xl sm:text-2xl font-medium text-[#1A202C] mb-8">
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E05A47] to-[#C84B31] mb-10">
                         My Journey
                     </h2>
  
                     <div className="flex flex-col">
                         {timeline.map((point, index) => (
-                            <div key={point.year} className="flex gap-6">
+                            <motion.div 
+                                key={point.year} 
+                                className="flex gap-6 group"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
                                 <div className="flex flex-col items-center">
-                                    <span className="w-2 h-2 rounded-full bg-[#E05A47] shrink-0 mt-1.5" />
+                                    <div className="w-3 h-3 rounded-full bg-[#E05A47] group-hover:scale-150 transition-transform duration-300 shrink-0 mt-1.5" />
                                     {index !== timeline.length - 1 && (
-                                        <span className="w-px flex-1 border-[#1A202C]/15 my-1" />
+                                        <div className="w-px flex-1 bg-[#1A202C]/10 my-2 group-hover:bg-[#E05A47]/50 transition-colors" />
                                     )}
                                 </div>
                                 <div className="pb-10">
-                                    <span className="font-mono text-xs text-[#718096]">
+                                    <span className="font-mono text-xs font-semibold text-[#E05A47]">
                                         {point.year}
                                     </span>
-                                    <h3 className="text-[#1A202C] text-base sm:text-lg font-medium mt-1">
+                                    <h3 className="text-[#1A202C] text-lg sm:text-xl font-bold mt-1 group-hover:text-[#E05A47] transition-colors">
                                         {point.title}
                                     </h3>
-                                    <p className="text-[#4A5568] text-sm mt-1 max-w-md">
+                                    <p className="text-[#4A5568] text-sm mt-2 max-w-md group-hover:text-[#2D3748] transition-colors">
                                         {point.description}
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.div>
