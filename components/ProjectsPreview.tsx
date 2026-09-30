@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
@@ -24,46 +23,11 @@ const item = {
     },
 };
 
-type Project = {
-    _id: string;
-    title: string;
-    description: string;
-    tech: string[];
-    liveLink: string;
-    githubLink: string;
-    previewImage?: string;
-};
-
-export default function ProjectsPreview() {
-    const [projects, setProjects] = useState<Project[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch('/api/projects')
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.success) {
-                    setProjects(data.projects);
-                }
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-    }, []);
-
+export default function ProjectsPreview({ projects }: { projects: any[] }) {
     const featured = projects.slice(0, 2);
 
-    if (loading) {
-        return (
-            <section className="relative px-6 py-24">
-                <div className="max-w-5xl mx-auto text-[#718096] text-sm">
-                    Loading projects...
-                </div>
-            </section>
-        );
-    }
-
     return (
-        <section className="relative px-6 py-24 overflow-hidden">
+        <section id="projects" className="relative px-6 py-24 overflow-hidden">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -77,7 +41,7 @@ export default function ProjectsPreview() {
                 >
                     <div>
                         <span className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-3">
-                            previw
+                            preview
                         </span>
                         <h2 className="font-display text-2xl sm:text-3xl font-medium text-[#1A202C]">
                             Selected Work
@@ -94,9 +58,9 @@ export default function ProjectsPreview() {
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
-                    {featured.map((project) => (
+                    {featured.map((project: any) => (
                         <motion.div
-                            key={project._id}
+                            key={project.id}
                             variants={item}
                             whileHover={{ y: -4 }}
                             className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
@@ -115,7 +79,7 @@ export default function ProjectsPreview() {
                             </p>
 
                             <div className="flex flex-wrap gap-2 mb-5">
-                                {project.tech.map((t) => (
+                                {project.tags.split(',').map((t: string) => (
                                     <span
                                         key={t}
                                         className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]/10 rounded-md px-2 py-1"
@@ -127,7 +91,7 @@ export default function ProjectsPreview() {
 
                             <div className="flex items-center gap-4">
                                 <a
-                                    href={project.liveLink}
+                                    href={project.live}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
@@ -136,7 +100,7 @@ export default function ProjectsPreview() {
                                     Live
                                 </a>
                                 <a
-                                    href={project.githubLink}
+                                    href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
@@ -148,16 +112,6 @@ export default function ProjectsPreview() {
                         </motion.div>
                     ))}
                 </div>
-
-                <motion.div variants={item} className="flex sm:hidden justify-center mt-8">
-                    <Link
-                        href="/projects"
-                        className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
-                    >
-                        View all projects
-                        <FiArrowRight size={14} />
-                    </Link>
-                </motion.div>
             </motion.div>
         </section>
     );

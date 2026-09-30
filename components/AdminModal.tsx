@@ -2,10 +2,7 @@
 import { useState } from 'react';
 import { FiX, FiEdit2, FiTrash2, FiPlus } from 'react-icons/fi';
 
-export default function AdminModal({ onClose }: { onClose: () => void }) {
-  const [projects, setProjects] = useState([
-    { id: 1, title: 'Project One', description: 'Desc', image: '/pic.png', live: '#', github: '#', tags: 'tag1,tag2', featured: true },
-  ]);
+export default function AdminModal({ onClose, projects, setProjects }: { onClose: () => void, projects: any[], setProjects: any }) {
   const [newProject, setNewProject] = useState({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
 
   const addProject = () => {
