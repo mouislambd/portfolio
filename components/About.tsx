@@ -77,31 +77,35 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-16 md:gap-24 items-start mb-10">
-                    <div className="space-y-6 text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-2xl order-2 md:order-1">
-                        <p>
-                            CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
-                            Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
-                            Experienced in developing responsive full-stack applications, integrating authentication, databases, and modern backend services while following clean code and best practices.
-                        </p>
-                        <p>
-                            Short-term goal: Grow as a professional Full-Stack Developer by building impactful real-world applications.
-                            Long-term goal: Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
-                        </p>
-                        <p className="text-[#E05A47]/80">
-                            I believe in shipping code, learning in public, and letting
-                            projects speak louder than words.
-                        </p>
+                <motion.div variants={item} className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-10">
+                    <div className="w-full md:w-7/12 flex flex-col gap-4">
+                        <div className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed">
+                            <p>
+                                CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
+                                Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
+                                Experienced in developing responsive full-stack applications, integrating authentication, databases, and modern backend services while following clean code and best practices.
+                            </p>
+                            <p>
+                                Short-term goal: Grow as a professional Full-Stack Developer by building impactful real-world applications.
+                                Long-term goal: Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
+                            </p>
+                            <p className="text-[#E05A47]/80">
+                                I believe in shipping code, learning in public, and letting
+                                projects speak louder than words.
+                            </p>
+                        </div>
                     </div>
                     
-                    <div className="relative w-full md:w-72 h-80 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 order-1 md:order-2 shrink-0">
-                        <Image
-                            src="/images/2nd.jpeg"
-                            alt="Kanich Fatema Mou"
-                            fill
-                            sizes="(max-width: 768px) 100vw, 288px"
-                            className="object-cover object-center"
-                        />
+                    <div className="w-full md:w-4/12 flex justify-end items-start shrink-0">
+                        <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                            <Image
+                                src="/images/2nd.jpeg"
+                                alt="Kanich Fatema Mou"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 288px"
+                                className="object-cover object-center"
+                            />
+                        </div>
                     </div>
                 </motion.div>
  
