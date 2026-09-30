@@ -5,6 +5,20 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FiArrowDown } from 'react-icons/fi';
 
+function Counter({ value }: { value: number }) {
+    const [displayValue, setDisplayValue] = useState(0);
+
+    useEffect(() => {
+        const controls = animate(0, value, {
+            duration: 2,
+            onUpdate: (v) => setDisplayValue(Math.floor(v)),
+        });
+        return () => controls.stop();
+    }, [value]);
+
+    return <span>{displayValue}+</span>;
+}
+
 const container = {
     hidden: {},
     show: {
@@ -47,62 +61,6 @@ export default function Hero() {
                         variants={item}
                         className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
                     >
-
-                    </motion.span>
-
-                    <motion.h1
-                        variants={item}
-                        className="font-display text-4xl sm:text-5xl md:text-[52px] font-medium leading-[1.05] tracking-tight text-[#1A202C]"
-                    >
-                        Kanich
-                        <br />
-                        Fatema Mou
-                    </motion.h1>
-
-                    <motion.div
-                        variants={item}
-                        className="mt-8 border-l-2 border-[#E05A47]/40 pl-5 flex flex-col gap-1"
-                    >
-                        <span className="text-[#1A202C] text-sm sm:text-base">
-                            Full Stack Developer
-                        </span>
-                        <span className="text-[#4A5568] text-sm sm:text-base">
-                            Future Data Scientist
-                        </span>
-                        <span className="text-[#E05A47]/80 text-sm sm:text-base">
-                            Aspiring AI Engineer, In sha Allah
-                        </span>
-                    </motion.div>
-
-function Counter({ value }: { value: number }) {
-    const [displayValue, setDisplayValue] = useState(0);
-
-    useEffect(() => {
-        const controls = animate(0, value, {
-            duration: 2,
-            onUpdate: (v) => setDisplayValue(Math.floor(v)),
-        });
-        return () => controls.stop();
-    }, [value]);
-
-    return <span>{displayValue}</span>;
-}
-
-export default function Hero() {
-    return (
-        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6">
-            <div
-                className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
-                aria-hidden="true"
-            />
-
-            <div className="max-w-6xl mx-auto w-full pt-32 pb-16 grid md:grid-cols-[1.3fr_auto] gap-12 items-center">
-                <motion.div variants={container} initial="hidden" animate="show">
-                    <motion.span
-                        variants={item}
-                        className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-4"
-                    >
-
                     </motion.span>
 
                     <motion.h1
@@ -145,7 +103,7 @@ export default function Hero() {
                             }}
                         >
                             <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
-                                <Counter value={9} />+
+                                <Counter value={9} />
                             </div>
                             <div className="text-[#1A202C] text-[11px] mt-1">
                                 projects shipped
@@ -186,7 +144,7 @@ export default function Hero() {
                     animate="show"
                     className="relative"
                 >
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl  border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
                         <Image
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"
@@ -201,5 +159,3 @@ export default function Hero() {
         </section>
     );
 }
-
-
