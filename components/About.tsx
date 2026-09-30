@@ -77,8 +77,8 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="flex justify-center mb-10">
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                <motion.div variants={item} className="flex flex-col md:flex-row items-center gap-10 mb-10">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20 shrink-0">
                         <Image
                             src="/images/2nd.jpeg"
                             alt="Kanich Fatema Mou"
@@ -87,27 +87,21 @@ export default function About() {
                             className="object-cover object-center"
                         />
                     </div>
-                </motion.div>
- 
-                <motion.div variants={item} className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-2xl">
-                    <p>
-                        CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
-                        Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
-                        Experienced in developing responsive full-stack applications, integrating authentication, databases, and modern backend services while following clean code and best practices.
-                        <br /> <br /> <br />
-                        Short-term goal: Grow as a professional Full-Stack Developer by building impactful real-world applications.
-                        Long-term goal: Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
-                    </p>
-                    <p>
-                      now ac: land a web developer role. <br /> <br /> <br />
-                        Long-term: become a
-                        Data Scientist and AI Engineer 
-                        Insha-allah
-                    </p>
-                    <p className="text-[#E05A47]/80">
-                        I believe in shipping code, learning in public, and letting
-                        projects speak louder than words.
-                    </p>
+                    <div className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed">
+                        <p>
+                            CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
+                            Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
+                            Experienced in developing responsive full-stack applications, integrating authentication, databases, and modern backend services while following clean code and best practices.
+                        </p>
+                        <p>
+                            Short-term goal: Grow as a professional Full-Stack Developer by building impactful real-world applications.
+                            Long-term goal: Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
+                        </p>
+                        <p className="text-[#E05A47]/80">
+                            I believe in shipping code, learning in public, and letting
+                            projects speak louder than words.
+                        </p>
+                    </div>
                 </motion.div>
  
                 <motion.div
