@@ -77,13 +77,16 @@ export default function About() {
                     About Me
                 </motion.h1>
  
-                <motion.div variants={item} className="mb-10 w-full h-64 sm:h-80 relative overflow-hidden rounded-2xl shadow-xl">
-                    <Image
-                        src="/images/2nd.jpeg"
-                        alt="About Me"
-                        fill
-                        className="object-cover"
-                    />
+                <motion.div variants={item} className="relative">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                        <Image
+                            src="/images/2nd.jpeg"
+                            alt="Kanich Fatema Mou"
+                            fill
+                            sizes="(max-width: 768px) 256px, 288px"
+                            className="object-cover object-left"
+                        />
+                    </div>
                 </motion.div>
  
                 <motion.div variants={item} className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-2xl">
