@@ -95,14 +95,18 @@ export default function About() {
                         </div>
                         <motion.div
                             variants={item}
-                            className="inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4 w-full"
+                            whileHover={{ scale: 1.02, borderColor: '#E05A47', boxShadow: '0 10px 15px -3px rgba(224, 90, 71, 0.2)' }}
+                            className="inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4 w-full cursor-default transition-colors duration-300"
                         >
                             <span className="font-mono text-[11px] tracking-wide text-[#E05A47]">
                                 CURRENTLY LEARNING
                             </span>
-                            <span className="text-[#1A202C] text-sm sm:text-base">
+                            <motion.span 
+                                whileHover={{ color: '#E05A47' }}
+                                className="text-[#1A202C] text-sm sm:text-base transition-colors duration-300"
+                            >
                                 Python, Data Science &amp; Machine Learning fundamentals
-                            </span>
+                            </motion.span>
                         </motion.div>
                     </div>
                     

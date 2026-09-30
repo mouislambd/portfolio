@@ -83,7 +83,7 @@ export default function Hero() {
                             Full Stack Developer
                         </motion.span>
                         <motion.span
-                            whileHover={{ x: 5, color: '#E05A47' }}
+                            whileHover={{ x: 5, color: '#E05A47', textShadow: '0 0 8px rgba(224, 90, 71, 0.4)' }}
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 3, repeat: Infinity }}
                             className="text-[#4A5568] text-sm sm:text-base cursor-default"
@@ -91,7 +91,7 @@ export default function Hero() {
                             Future Data Scientist
                         </motion.span>
                         <motion.span
-                            whileHover={{ x: 5, color: '#E05A47' }}
+                            whileHover={{ x: 5, color: '#E05A47', textShadow: '0 0 8px rgba(224, 90, 71, 0.4)' }}
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                             className="text-[#E05A47]/80 text-sm sm:text-base cursor-default"
