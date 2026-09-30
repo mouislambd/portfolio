@@ -24,8 +24,6 @@ const item = {
 };
 
 export default function ProjectsPreview({ projects }: { projects: any[] }) {
-    const featured = projects.slice(0, 2);
-
     return (
         <section id="projects" className="relative px-6 py-24 overflow-hidden">
             <motion.div
@@ -58,7 +56,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
-                    {featured.map((project: any) => (
+                    {projects.slice(0, 2).map((project: any) => (
                         <motion.div
                             key={project.id}
                             variants={item}
@@ -116,5 +114,3 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
         </section>
     );
 }
-
-

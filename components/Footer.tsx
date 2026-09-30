@@ -1,8 +1,20 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiGithub, FiLinkedin, FiArrowUpRight, FiMail, FiPhone, FiDownload } from 'react-icons/fi';
 import AdminModal from './AdminModal';
+import { projects as libProjects } from '@/lib/projects';
+
+const formattedProjects = libProjects.map((p, index) => ({
+    id: index + 1,
+    title: p.title,
+    description: p.description,
+    image: p.image || '/pic.png',
+    live: p.liveLink,
+    github: p.githubLink,
+    tags: p.tech.join(','),
+    featured: false,
+}));
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -27,10 +39,22 @@ const socialLinks = [
     },
 ];
 
-export default function Footer({ projects, setProjects }: { projects: any[], setProjects: any }) {
+export default function Footer() {
     const year = new Date().getFullYear();
     const [footerClick, setFooterClick] = useState(0);
     const [adminOpen, setAdminOpen] = useState(false);
+    
+    const [projects, setProjects] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('projects');
+            return saved ? JSON.parse(saved) : formattedProjects;
+        }
+        return formattedProjects;
+    });
+
+    useEffect(() => {
+        localStorage.setItem('projects', JSON.stringify(projects));
+    }, [projects]);
 
     const handleCopyrightClick = () => {
         const newCount = footerClick + 1;
@@ -41,7 +65,6 @@ export default function Footer({ projects, setProjects }: { projects: any[], set
             setFooterClick(newCount);
         }
     };
-
 
     return (
         <footer className="relative border-t border-[#1A202C]/10 px-6 py-14">
@@ -141,7 +164,3 @@ export default function Footer({ projects, setProjects }: { projects: any[], set
         </footer>
     );
 }
-
-
-
-

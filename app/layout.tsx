@@ -1,10 +1,9 @@
 'use client';
-import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import Footer from '@/components/Footer';
-import { useState } from 'react';
+import React from 'react';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -30,14 +29,6 @@ const playfairDisplay = Playfair_Display({
   style: ['italic'],
 });
 
-/*
-export const metadata: Metadata = {
-  title: 'Kanich Fatema Mou — Full Stack Developer',
-  description:
-    'Full Stack Developer, Future Data Scientist, Aspiring AI Engineer. Building with the MERN stack and Next.js.',
-};
-*/
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,15 +41,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <FooterWrapper />
+        <Footer />
       </body>
     </html>
   );
-}
-
-function FooterWrapper() {
-  const [projects, setProjects] = useState([
-    { id: 1, title: 'Project One', description: 'Desc', image: '/pic.png', live: '#', github: '#', tags: 'tag1,tag2', featured: true },
-  ]);
-  return <Footer projects={projects} setProjects={setProjects} />;
 }
