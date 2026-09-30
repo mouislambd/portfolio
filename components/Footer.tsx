@@ -27,7 +27,7 @@ const socialLinks = [
     },
 ];
 
-export default function Footer() {
+export default function Footer({ projects, setProjects }: { projects: any[], setProjects: any }) {
     const year = new Date().getFullYear();
     const [footerClick, setFooterClick] = useState(0);
     const [adminOpen, setAdminOpen] = useState(false);
@@ -41,6 +41,7 @@ export default function Footer() {
             setFooterClick(newCount);
         }
     };
+
 
     return (
         <footer className="relative border-t border-[#1A202C]/10 px-6 py-14">
@@ -136,10 +137,11 @@ export default function Footer() {
                     </span>
                 </div>
             </div>
-            {adminOpen && <AdminModal onClose={() => setAdminOpen(false)} />}
+            {adminOpen && <AdminModal onClose={() => setAdminOpen(false)} projects={projects} setProjects={setProjects} />}
         </footer>
     );
 }
+
 
 
 
