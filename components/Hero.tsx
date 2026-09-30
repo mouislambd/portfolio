@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, animate } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FiArrowDown } from 'react-icons/fi';
 
@@ -77,14 +78,24 @@ export default function Hero() {
                         variants={item}
                         className="mt-10 grid grid-cols-3 gap-px border-[#1A202C]/15 rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
                     >
-                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20"
+                            onClick={() => {
+                                const element = document.getElementById('projects');
+                                if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
                             <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
-                                9+
+                                <Counter value={9} />+
                             </div>
                             <div className="text-[#1A202C] text-[11px] mt-1">
                                 projects shipped
                             </div>
-                        </div>
+                        </motion.div>
                         <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
                             <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
                                 MERN
@@ -102,6 +113,20 @@ export default function Hero() {
                             </div>
                         </div>
                     </motion.div>
+
+function Counter({ value }: { value: number }) {
+    const [displayValue, setDisplayValue] = useState(0);
+
+    useEffect(() => {
+        const controls = animate(0, value, {
+            duration: 2,
+            onUpdate: (v) => setDisplayValue(Math.floor(v)),
+        });
+        return () => controls.stop();
+    }, [value]);
+
+    return <span>{displayValue}</span>;
+}
 
                     <motion.div variants={item} className="mt-12 max-w-lg">
                         <motion.span
