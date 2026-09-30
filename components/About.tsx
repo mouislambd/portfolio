@@ -70,15 +70,14 @@ export default function About() {
                     INDEX / 002
                 </motion.span>
  
-                <motion.h1
-                    variants={item}
-                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-8"
-                >
-                    About Me
-                </motion.h1>
- 
                 <motion.div variants={item} className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-10">
-                    <div className="w-full md:w-7/12 flex flex-col gap-4">
+                    <div className="w-full md:w-7/12 flex flex-col gap-6">
+                        <motion.h1
+                            variants={item}
+                            className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C]"
+                        >
+                            About Me
+                        </motion.h1>
                         <div className="space-y-4 text-[#4A5568] text-sm sm:text-base leading-relaxed">
                             <p>
                                 CST student and Full-Stack Web Developer with hands-on experience building modern web applications using the MERN stack. <br />
@@ -94,6 +93,17 @@ export default function About() {
                                 projects speak louder than words.
                             </p>
                         </div>
+                        <motion.div
+                            variants={item}
+                            className="inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4 w-full"
+                        >
+                            <span className="font-mono text-[11px] tracking-wide text-[#E05A47]">
+                                CURRENTLY LEARNING
+                            </span>
+                            <span className="text-[#1A202C] text-sm sm:text-base">
+                                Python, Data Science &amp; Machine Learning fundamentals
+                            </span>
+                        </motion.div>
                     </div>
                     
                     <div className="w-full md:w-4/12 flex justify-end items-start shrink-0">
@@ -107,18 +117,6 @@ export default function About() {
                             />
                         </div>
                     </div>
-                </motion.div>
- 
-                <motion.div
-                    variants={item}
-                    className="mt-10 inline-flex flex-col gap-2 bg-white border border-[#1A202C]/10 rounded-xl px-5 py-4"
-                >
-                    <span className="font-mono text-[11px] tracking-wide text-[#E05A47]">
-                        CURRENTLY LEARNING
-                    </span>
-                    <span className="text-[#1A202C] text-sm sm:text-base">
-                        Python, Data Science &amp; Machine Learning fundamentals
-                    </span>
                 </motion.div>
  
                 <motion.div variants={item} className="mt-16">
