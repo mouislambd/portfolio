@@ -46,7 +46,8 @@ export default function Education() {
             <motion.div
                 variants={container}
                 initial="hidden"
-                animate="show"
+                whileInView="show"
+                viewport={{ once: true, margin: '-100px' }}
                 className="max-w-3xl mx-auto"
             >
                 <motion.span
@@ -58,7 +59,7 @@ export default function Education() {
 
                 <motion.h1
                     variants={item}
-                    className="font-display text-3xl sm:text-4xl font-medium leading-tight text-[#1A202C] mb-4"
+                    className="font-display text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E05A47] to-[#C84B31] mb-4"
                 >
                     Education
                 </motion.h1>
@@ -73,20 +74,21 @@ export default function Education() {
                 {/* Institution Card */}
                 <motion.div
                     variants={item}
-                    className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 mb-8"
+                    whileHover={{ y: -5, borderColor: '#E05A47' }}
+                    className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 mb-8 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#E05A47]/10"
                 >
                     <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-[#E05A47]-dim flex items-center justify-center shrink-0">
+                        <div className="w-11 h-11 rounded-xl bg-[#E05A47]/10 flex items-center justify-center shrink-0">
                             <FiBookOpen className="text-[#E05A47]" size={20} />
                         </div>
                         <div>
-                            <h2 className="text-[#1A202C] text-lg font-medium">
+                            <h2 className="text-[#1A202C] text-lg font-bold">
                                 Diploma in Engineering (Computer Science)
                             </h2>
                             <p className="text-[#4A5568] text-sm mt-1">
                                 Rangpur Ideal Institute of Technology (RIIT)
                             </p>
-                            <p className="font-mono text-xs text-[#718096] mt-2">
+                            <p className="font-mono text-xs text-[#E05A47] mt-2">
                                 2023 — 2027 (In sha Allah)
                             </p>
                         </div>
@@ -95,34 +97,40 @@ export default function Education() {
 
                 {/* Courses */}
                 <motion.div variants={item} className="mb-12">
-                    <h3 className="font-display text-xl font-medium text-[#1A202C] mb-5">
+                    <h3 className="font-display text-xl font-bold text-[#1A202C] mb-5">
                         Courses
                     </h3>
 
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5">
+                        <motion.div 
+                            whileHover={{ x: 5 }}
+                            className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5 transition-all duration-200 hover:border-[#E05A47]"
+                        >
                             <span className="w-2 h-2 rounded-full bg-[#E05A47] mt-2 shrink-0" />
                             <div>
-                                <p className="text-[#1A202C] text-sm sm:text-base font-medium">
+                                <p className="text-[#1A202C] text-sm sm:text-base font-semibold">
                                     Web Development — Programming Hero
                                 </p>
-                                <p className="text-[#E05A47]/80 text-xs mt-1 font-mono">
+                                <p className="text-[#E05A47] text-xs mt-1 font-mono font-bold">
                                     Completed
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5">
-                            <span className="w-2 h-2 rounded-full border-[#1A202C]/15 mt-2 shrink-0" />
+                        <motion.div 
+                            whileHover={{ x: 5 }}
+                            className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5 transition-all duration-200 hover:border-[#E05A47]"
+                        >
+                            <span className="w-2 h-2 rounded-full border border-[#1A202C]/30 mt-2 shrink-0" />
                             <div>
-                                <p className="text-[#1A202C] text-sm sm:text-base font-medium">
+                                <p className="text-[#1A202C] text-sm sm:text-base font-semibold">
                                     Data Science
                                 </p>
                                 <p className="text-[#718096] text-xs mt-1 font-mono">
                                     Next step, In sha Allah
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
 
@@ -131,23 +139,24 @@ export default function Education() {
                     <div>
                         <div className="flex items-center gap-2 mb-4">
                             <FiCode className="text-[#E05A47]" size={16} />
-                            <h3 className="font-display text-lg font-medium text-[#1A202C]">
+                            <h3 className="font-display text-lg font-bold text-[#1A202C]">
                                 Programming Languages
                             </h3>
                         </div>
                         <div className="flex flex-col gap-2.5">
                             {programmingLanguages.map((lang) => (
-                                <div
+                                <motion.div
                                     key={lang.name}
-                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
+                                    whileHover={{ x: 5 }}
+                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-3 transition-all duration-200 hover:border-[#E05A47]"
                                 >
-                                    <span className="text-[#1A202C] text-sm">{lang.name}</span>
+                                    <span className="text-[#1A202C] text-sm font-semibold">{lang.name}</span>
                                     {lang.note && (
-                                        <span className="text-[#E05A47]/80 text-[11px] font-mono">
+                                        <span className="text-[#E05A47] text-[11px] font-mono font-bold">
                                             {lang.note}
                                         </span>
                                     )}
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -155,21 +164,22 @@ export default function Education() {
                     <div>
                         <div className="flex items-center gap-2 mb-4">
                             <FiGlobe className="text-[#E05A47]" size={16} />
-                            <h3 className="font-display text-lg font-medium text-[#1A202C]">
+                            <h3 className="font-display text-lg font-bold text-[#1A202C]">
                                 Spoken Languages
                             </h3>
                         </div>
                         <div className="flex flex-col gap-2.5">
                             {spokenLanguages.map((lang) => (
-                                <div
+                                <motion.div
                                     key={lang.name}
-                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-2.5"
+                                    whileHover={{ x: 5 }}
+                                    className="flex items-center justify-between bg-white border border-[#1A202C]/10 rounded-lg px-4 py-3 transition-all duration-200 hover:border-[#E05A47]"
                                 >
-                                    <span className="text-[#1A202C] text-sm">{lang.name}</span>
-                                    <span className="text-[#718096] text-[11px] font-mono">
+                                    <span className="text-[#1A202C] text-sm font-semibold">{lang.name}</span>
+                                    <span className="text-[#E05A47] text-[11px] font-mono font-bold">
                                         {lang.level}
                                     </span>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -178,10 +188,11 @@ export default function Education() {
                 {/* Future Growth */}
                 <motion.div
                     variants={item}
-                    className="flex items-start gap-4 border-l-2 border-[#E05A47]/40 pl-5"
+                    whileHover={{ scale: 1.01 }}
+                    className="flex items-start gap-4 border-l-2 border-[#E05A47] pl-5 bg-white/50 py-2 rounded-r-lg"
                 >
                     <FiTrendingUp className="text-[#E05A47] mt-1 shrink-0" size={18} />
-                    <p className="text-[#4A5568] text-sm sm:text-base">
+                    <p className="text-[#4A5568] text-sm sm:text-base font-medium">
                         Looking ahead, planning to grow further through advanced skills
                         training and university-level academic pursuits, In sha Allah.
                     </p>
