@@ -76,15 +76,28 @@ export default function Hero() {
                         variants={item}
                         className="mt-8 border-l-2 border-[#E05A47]/40 pl-5 flex flex-col gap-1"
                     >
-                        <span className="text-[#1A202C] text-sm sm:text-base">
+                        <motion.span
+                            whileHover={{ x: 5, color: '#E05A47' }}
+                            className="text-[#1A202C] text-sm sm:text-base cursor-default"
+                        >
                             Full Stack Developer
-                        </span>
-                        <span className="text-[#4A5568] text-sm sm:text-base">
+                        </motion.span>
+                        <motion.span
+                            whileHover={{ x: 5, color: '#E05A47' }}
+                            animate={{ opacity: [0.7, 1, 0.7] }}
+                            transition={{ duration: 3, repeat: Infinity }}
+                            className="text-[#4A5568] text-sm sm:text-base cursor-default"
+                        >
                             Future Data Scientist
-                        </span>
-                        <span className="text-[#E05A47]/80 text-sm sm:text-base">
+                        </motion.span>
+                        <motion.span
+                            whileHover={{ x: 5, color: '#E05A47' }}
+                            animate={{ opacity: [0.7, 1, 0.7] }}
+                            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                            className="text-[#E05A47]/80 text-sm sm:text-base cursor-default"
+                        >
                             Aspiring AI Engineer, In sha Allah
-                        </span>
+                        </motion.span>
                     </motion.div>
 
                     <motion.div
