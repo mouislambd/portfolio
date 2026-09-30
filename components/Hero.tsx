@@ -144,7 +144,7 @@ export default function Hero() {
                     animate="show"
                     className="relative"
                 >
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
                         <Image
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"
