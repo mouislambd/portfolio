@@ -48,13 +48,13 @@ export default function Navbar() {
             href="/"
             className="group flex items-center gap-3 text-[#1A202C] focus-ring"
           >
-            <div className="hidden sm:block font-serif italic text-2xl text-[#C84B31] tracking-tight transition-opacity group-hover:opacity-80">
+            <div className="hidden sm:block font-serif italic font-bold text-2xl text-[#C84B31] tracking-tight transition-opacity group-hover:opacity-80">
               Kanich Fatema Mou
             </div>
-            <div className="flex flex-col items-center justify-center text-[10px] leading-tight font-bold text-[#C84B31] border-l border-[#C84B31] pl-3">
-              <span>K</span>
-              <span>F</span>
-              <span>M</span>
+            <div className="flex flex-col leading-none font-black text-xs tracking-tighter text-[#C84B31] border-l-2 border-[#C84B31] pl-1 ml-2">
+              <span className="font-extrabold text-[10px] leading-tight">K</span>
+              <span className="font-extrabold text-[10px] leading-tight">F</span>
+              <span className="font-extrabold text-[10px] leading-tight">M</span>
             </div>
           </Link>
 
