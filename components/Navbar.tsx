@@ -46,16 +46,16 @@ export default function Navbar() {
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
           <Link
             href="/"
-            className="group flex items-center gap-2 text-[#1A202C] focus-ring"
+            className="group flex items-center gap-3 text-[#1A202C] focus-ring"
           >
             <div className="hidden sm:flex flex-col justify-center leading-tight font-serif italic font-bold text-lg text-[#C84B31] transition-opacity group-hover:opacity-80">
               <span>Kanich</span>
               <span>Fatema Mou</span>
             </div>
-            <div className="flex flex-col leading-none font-black text-xs tracking-tighter text-[#C84B31] border-l-2 border-[#C84B31] pl-1">
-              <span className="font-extrabold text-[10px] leading-tight">K</span>
-              <span className="font-extrabold text-[10px] leading-tight">F</span>
-              <span className="font-extrabold text-[10px] leading-tight">M</span>
+            <div className="flex flex-col leading-none font-black text-sm tracking-tighter text-[#C84B31] border-l-2 border-[#C84B31] pl-2">
+              <span className="font-black leading-none">K</span>
+              <span className="font-black leading-none">F</span>
+              <span className="font-black leading-none">M</span>
             </div>
           </Link>
 
