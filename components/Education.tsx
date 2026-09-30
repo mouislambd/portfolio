@@ -107,13 +107,23 @@ export default function Education() {
                             className="flex items-start gap-4 bg-white border border-[#1A202C]/10 rounded-xl p-5 transition-all duration-200 hover:border-[#E05A47]"
                         >
                             <span className="w-2 h-2 rounded-full bg-[#E05A47] mt-2 shrink-0" />
-                            <div>
+                            <div className="flex-1">
                                 <p className="text-[#1A202C] text-sm sm:text-base font-semibold">
                                     Web Development — Programming Hero
                                 </p>
-                                <p className="text-[#E05A47] text-xs mt-1 font-mono font-bold">
-                                    Completed
-                                </p>
+                                <div className="flex justify-between items-center mt-1">
+                                    <p className="text-[#E05A47] text-xs font-mono font-bold">
+                                        Completed
+                                    </p>
+                                    <a
+                                        href="/images/certificet.png"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#E05A47] text-xs font-bold font-mono hover:underline flex items-center gap-1"
+                                    >
+                                        View Certificate ↗
+                                    </a>
+                                </div>
                             </div>
                         </motion.div>
 
