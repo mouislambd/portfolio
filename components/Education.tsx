@@ -115,13 +115,13 @@ export default function Education() {
                                     <p className="text-[#E05A47] text-xs font-mono font-bold">
                                         Completed
                                     </p>
-                                    <a
-                                        href="/images/certificet.png"
-                                        target="_blank"
+                                    <a 
+                                        href="/images/certificet.png" 
+                                        target="_blank" 
                                         rel="noopener noreferrer"
                                         className="text-[#E05A47] text-xs font-bold font-mono hover:underline flex items-center gap-1"
                                     >
-                                        View Certificate ↗
+                                        View Certificate
                                     </a>
                                 </div>
                             </div>
