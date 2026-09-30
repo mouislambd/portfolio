@@ -70,7 +70,7 @@ export default function About() {
                     INDEX / 002
                 </motion.span>
  
-                <motion.div variants={item} className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-10">
+                <motion.div variants={item} className="flex flex-col md:flex-row justify-between items-start gap-16 md:gap-32 mb-10">
                     <div className="w-full md:w-7/12 flex flex-col gap-6">
                         <motion.h1
                             variants={item}
