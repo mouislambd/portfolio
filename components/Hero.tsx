@@ -140,14 +140,21 @@ export default function Hero() {
                         </div>
                         <Link 
                             href="/contact"
-                            className="bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20 hover:bg-[#E05A47]/5 block"
+                            className="group bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20 hover:bg-[#E05A47]/5 block relative overflow-hidden"
                         >
-                            <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
-                                Open
-                            </div>
-                            <div className="text-[#4A5568] text-[11px] mt-1">
-                                to work
-                            </div>
+                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#E05A47]/30 rounded-xl transition-all duration-300" />
+                            <motion.div
+                                animate={{ opacity: [0.5, 1, 0.5] }}
+                                transition={{ duration: 2, repeat: Infinity }}
+                            >
+                                <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
+                                    Open
+                                </div>
+                                <div className="text-[#4A5568] text-[11px] mt-1 flex items-center gap-1">
+                                    to work 
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#E05A47] animate-pulse" />
+                                </div>
+                            </motion.div>
                         </Link>
                     </motion.div>
 
