@@ -139,6 +139,7 @@ export default function Projects() {
                         <AnimatePresence mode="popLayout">
                             {filtered.map((project) => (
                                     <AnimatedProjectCard
+                                        key={project._id}
                                         title={project.title}
                                         description={project.description}
                                         tech={project.tech}
