@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
+import ParticleNetwork from './ParticleNetwork';
 
 const container = {
     hidden: {},
@@ -63,14 +64,12 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             whileHover={{ y: -4 }}
                             className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
-                            <div className="w-full h-36 rounded-xl bg-gradient-to-br from-[#E05A47]/10 via-[#FDFBF7] to-[#FDFBF7] mb-5 flex items-center justify-center overflow-hidden">
-                                {project.previewImage ? (
-                                    <img src={project.previewImage} alt={project.title} className="w-full h-full object-cover" />
-                                ) : (
-                                    <span className="font-display text-2xl text-[#E05A47]/80">
-                                        {project.title}
-                                    </span>
-                                )}
+                            <div className="w-full h-48 rounded-xl bg-[#1A202C] mb-5 flex items-center justify-center overflow-hidden relative">
+                                <ParticleNetwork />
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
+                                <h3 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
+                                    {project.title}
+                                </h3>
                             </div>
 
                             <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
