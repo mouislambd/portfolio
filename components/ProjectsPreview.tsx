@@ -63,10 +63,14 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             whileHover={{ y: -4 }}
                             className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
-                            <div className="w-full h-36 rounded-xl bg-gradient-to-br from-[#E05A47]/10 via-[#FDFBF7] to-[#FDFBF7] mb-5 flex items-center justify-center">
-                                <span className="font-display text-2xl text-[#E05A47]/80">
-                                    {project.title}
-                                </span>
+                            <div className="w-full h-36 rounded-xl bg-gradient-to-br from-[#E05A47]/10 via-[#FDFBF7] to-[#FDFBF7] mb-5 flex items-center justify-center overflow-hidden">
+                                {project.previewImage ? (
+                                    <img src={project.previewImage} alt={project.title} className="w-full h-full object-cover" />
+                                ) : (
+                                    <span className="font-display text-2xl text-[#E05A47]/80">
+                                        {project.title}
+                                    </span>
+                                )}
                             </div>
 
                             <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">

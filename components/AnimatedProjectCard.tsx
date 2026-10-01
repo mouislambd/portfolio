@@ -20,6 +20,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
     liveLink,
     githubLink,
     videoUrl,
+    fallbackImageUrl,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -48,6 +49,13 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
                         muted
                         loop
                         playsInline
+                        className="w-full h-full object-cover transition-transform duration-500"
+                        style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
+                    />
+                ) : fallbackImageUrl ? (
+                    <img
+                        src={fallbackImageUrl}
+                        alt={title}
                         className="w-full h-full object-cover transition-transform duration-500"
                         style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
                     />
