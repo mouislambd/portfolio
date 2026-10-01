@@ -2,7 +2,8 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiExternalLink, FiGithub, FiSearch } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
+import AnimatedProjectCard from './AnimatedProjectCard';
 
 const container = {
     hidden: {},
@@ -31,6 +32,7 @@ type Project = {
     liveLink: string;
     githubLink: string;
     previewImage?: string;
+    videoUrl?: string;
 };
 
 export default function Projects() {
@@ -136,62 +138,15 @@ export default function Projects() {
                     <motion.div layout className="grid sm:grid-cols-2 gap-5">
                         <AnimatePresence mode="popLayout">
                             {filtered.map((project) => (
-                                <motion.div
-                                    key={project._id}
-                                    layout
-                                    initial={{ opacity: 0, y: 16 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, scale: 0.96 }}
-                                    transition={{ duration: 0.3 }}
-                                    whileHover={{ y: -4 }}
-                                    className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
-                                >
-                                    <div className="w-full h-36 rounded-xl bg-gradient-to-br from-coral/20 via-ink to-ink mb-5 flex items-center justify-center">
-                                        <span className="font-display text-2xl text-[#E05A47]/80">
-                                            {project.title}
-                                        </span>
-                                    </div>
-
-                                    <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-[#4A5568] text-sm mb-4">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-2 mb-5">
-                                        {project.tech.map((t) => (
-                                            <span
-                                                key={t}
-                                                className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]-dim rounded-md px-2 py-1"
-                                            >
-                                                {t}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <div className="flex items-center gap-4">
-                                        <a
-                                            href={project.liveLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
-                                        >
-                                            <FiExternalLink size={14} />
-                                            Live
-                                        </a>
-
-                                        <a
-                                            href={project.githubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
-                                        >
-                                            <FiGithub size={14} />
-                                            Code
-                                        </a>
-                                    </div>
-                                </motion.div>
+                                    <AnimatedProjectCard
+                                        title={project.title}
+                                        description={project.description}
+                                        tech={project.tech}
+                                        liveLink={project.liveLink}
+                                        githubLink={project.githubLink}
+                                        // videoUrl={project.videoUrl} 
+                                        // fallbackImageUrl={project.previewImage}
+                                    />
                             ))}
                         </AnimatePresence>
                     </motion.div>
