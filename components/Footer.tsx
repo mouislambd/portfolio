@@ -106,11 +106,11 @@ export default function Footer() {
                                 kanichfatema@outlook.com
                             </a>
                             <a
-                                href="tel:YOUR_PHONE_NUMBER"
+                                href="tel:+8801312037670"
                                 className="flex items-center gap-2 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                             >
                                 <FiPhone size={14} />
-                                Number: +880 1317592043
+                                Number: +880 1312037670
                             </a>
                         </div>
                     </div>
