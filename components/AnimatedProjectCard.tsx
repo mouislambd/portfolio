@@ -48,10 +48,34 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
                         style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
                     />
                 ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-coral/20 via-ink to-ink flex items-center justify-center">
-                        <span className="font-display text-2xl text-[#E05A47]/80">
+                    <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-[#1A202C] animate-gradient bg-gradient-to-br from-[#E05A47] to-[#1A202C]">
+                        {/* Particles */}
+                        <div className="absolute inset-0 overflow-hidden">
+                            {[...Array(6)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute bg-white rounded-full opacity-15"
+                                    style={{
+                                        width: Math.random() * 8 + 4,
+                                        height: Math.random() * 8 + 4,
+                                        left: `${Math.random() * 100}%`,
+                                        top: `${Math.random() * 100}%`,
+                                    }}
+                                    animate={{
+                                        y: [0, -40, 0],
+                                        x: [0, 20, 0],
+                                    }}
+                                    transition={{
+                                        duration: 3 + Math.random() * 3,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            ))}
+                        </div>
+                        <h2 className="text-white font-display text-2xl font-bold relative z-10 drop-shadow-lg shimmer-text">
                             {title}
-                        </span>
+                        </h2>
                     </div>
                 )}
                 {/* Fallback image could be implemented as an img tag with onError handler */}
