@@ -4,6 +4,7 @@ import { motion, animate } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FiArrowDown } from 'react-icons/fi';
+import Link from 'next/link';
 
 function Counter({ value }: { value: number }) {
     const [displayValue, setDisplayValue] = useState(0);
@@ -137,14 +138,17 @@ export default function Hero() {
                                 core stack
                             </div>
                         </div>
-                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
+                        <Link 
+                            href="/contact"
+                            className="bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20 hover:bg-[#E05A47]/5 block"
+                        >
                             <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
                                 Open
                             </div>
                             <div className="text-[#4A5568] text-[11px] mt-1">
                                 to work
                             </div>
-                        </div>
+                        </Link>
                     </motion.div>
 
                     <motion.div variants={item} className="mt-12 max-w-lg">
