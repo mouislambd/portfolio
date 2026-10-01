@@ -35,8 +35,8 @@ const ParticleNetwork: React.FC = () => {
 
         const draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.fillStyle = 'rgba(200, 75, 49, 0.5)'; // Dark rust particles
+            ctx.strokeStyle = 'rgba(200, 75, 49, 0.2)'; // Dark rust lines
 
             // Update and draw particles
             particles.forEach((p, i) => {

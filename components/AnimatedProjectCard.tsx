@@ -41,34 +41,15 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ring-1 ring-[#E05A47]/30" />
 
             {/* Project Media Container */}
-            <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-gray-100">
-                {videoUrl ? (
-                    <video
-                        src={videoUrl}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-500"
-                        style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
-                    />
-                ) : fallbackImageUrl ? (
-                    <img
-                        src={fallbackImageUrl}
-                        alt={title}
-                        className="w-full h-full object-cover transition-transform duration-500"
-                        style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
-                    />
-                ) : (
-                    <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-[#1A202C] animate-gradient bg-gradient-to-br from-[#E05A47] to-[#1A202C]">
-                        {/* Particles */}
-                        <ParticleNetwork />
-                        
-                        <h2 className="text-white font-display text-2xl font-bold relative z-10 drop-shadow-lg shimmer-text pointer-events-none">
-                            {title}
-                        </h2>
-                    </div>
-                )}
+            <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
+                {/* Unified Animated Canvas Banner */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <ParticleNetwork />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
+                    <h2 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
+                        {title}
+                    </h2>
+                </div>
             </div>
 
             <motion.h3
