@@ -2,7 +2,6 @@
 
 import { motion, animate } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { FiArrowDown } from 'react-icons/fi';
 import Link from 'next/link';
 
@@ -175,13 +174,10 @@ export default function Hero() {
                     <div 
                         className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20"
                     >
-                        <Image
+                        <img
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"
-                            fill
-                            sizes="(max-width: 768px) 256px, 288px"
-                            className="object-cover object-left"
-                            priority
+                            className="w-full h-full object-cover object-left"
                         />
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
  
 const container = {
     hidden: {},
@@ -112,12 +111,10 @@ export default function About() {
                     
                     <div className="w-full md:w-4/12 flex justify-end items-start shrink-0">
                         <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
-                            <Image
-                                src="/images/2nd.png"
+                            <img
+                                src="/images/certificet.png"
                                 alt="Kanich Fatema Mou"
-                                fill
-                                sizes="(max-width: 768px) 100vw, 288px"
-                                className="object-cover object-center"
+                                className="w-full h-full object-cover object-center"
                             />
                         </div>
                     </div>
