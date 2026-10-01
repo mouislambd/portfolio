@@ -158,15 +158,10 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
 
-                <motion.div
-                    variants={imageReveal}
-                    initial="hidden"
-                    animate="show"
+                <div
                     className="relative"
                 >
-                    <motion.div 
-                        animate={{ y: [0, -15, 0] }}
-                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                    <div 
                         className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20"
                     >
                         <Image
@@ -177,8 +172,8 @@ export default function Hero() {
                             className="object-cover object-left"
                             priority
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     );
