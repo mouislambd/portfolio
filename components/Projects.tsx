@@ -42,7 +42,7 @@ export default function Projects() {
 
     useEffect(() => {
         // Fetch from API
-        fetch('/api/projects')
+        fetch('/api/projects', { cache: 'no-store' } as any)
             .then((res) => res.json())
             .then((data) => {
                 let apiProjects = [];
@@ -62,10 +62,19 @@ export default function Projects() {
                     tech: lp.tags ? lp.tags.split(',') : [],
                     liveLink: lp.live,
                     githubLink: lp.github,
+                    createdAt: new Date(0), // Default old date
                 }));
                 
                 // Combine and remove duplicates based on title
                 const allProjects = [...apiProjects, ...normalizedLocal.filter((nl: any) => !apiProjects.find((ap: any) => ap.title === nl.title))];
+                
+                // Sort by date descending
+                allProjects.sort((a, b) => {
+                    const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+                    const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+                    return dateB - dateA;
+                });
+                
                 setProjects(allProjects);
                 setLoading(false);
             })

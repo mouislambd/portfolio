@@ -11,7 +11,13 @@ export async function GET() {
             .sort({ createdAt: -1 })
             .toArray();
 
-        return NextResponse.json({ success: true, projects });
+        return NextResponse.json({ success: true, projects }, {
+            headers: {
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        });
     } catch (error) {
         console.error('Get projects error:', error);
         return NextResponse.json(
