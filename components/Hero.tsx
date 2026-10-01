@@ -23,34 +23,41 @@ const container = {
     hidden: {},
     show: {
         transition: {
-            staggerChildren: 0.12,
-            delayChildren: 0.1,
+            staggerChildren: 0.15,
+            delayChildren: 0.2,
         },
     },
 };
 
 const item = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30, rotate: 2 },
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+        rotate: 0,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
 
 const imageReveal = {
-    hidden: { opacity: 0, scale: 0.92 },
+    hidden: { opacity: 0, scale: 0.8, rotate: -5 },
     show: {
         opacity: 1,
         scale: 1,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay: 0.3 },
+        rotate: 0,
+        transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const, delay: 0.4 },
     },
 };
 
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6">
-            <div
+            <motion.div
+                animate={{ 
+                    x: [0, 30, 0],
+                    y: [0, -30, 0],
+                }}
+                transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-40 -left-20 w-[420px] h-[420px] rounded-full bg-[#E05A47] opacity-10 blur-3xl pointer-events-none"
                 aria-hidden="true"
             />
@@ -157,7 +164,11 @@ export default function Hero() {
                     animate="show"
                     className="relative"
                 >
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20">
+                    <motion.div 
+                        animate={{ y: [0, -15, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20"
+                    >
                         <Image
                             src="/images/portfolio.jpg"
                             alt="Kanich Fatema Mou"
@@ -166,7 +177,7 @@ export default function Hero() {
                             className="object-cover object-left"
                             priority
                         />
-                    </div>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
