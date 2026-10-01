@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
         const newProject = {
             title,
             description,
-            tech: Array.isArray(tech) ? tech : tech.split(',').map((t: string) => t.trim()),
+            tech: Array.isArray(tech) ? tech : (tech || '').split(',').map((t: string) => t.trim()),
             liveLink: liveLink || '',
             githubLink: githubLink || '',
             previewImage: previewImage || '',

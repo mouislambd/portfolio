@@ -59,7 +59,7 @@ export default function Projects() {
                     _id: lp.id?.toString() || Math.random().toString(),
                     title: lp.title,
                     description: lp.description,
-                    tech: lp.tags ? lp.tags.split(',') : [],
+                    tech: lp.tags ? (lp.tags || '').split(',') : [],
                     liveLink: lp.live,
                     githubLink: lp.github,
                     createdAt: new Date(0), // Default old date

@@ -77,7 +77,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             </p>
 
                             <div className="flex flex-wrap gap-2 mb-5">
-                                {project.tags.split(',').map((t: string) => (
+                                {project.tags?.split(',')?.map((t: string) => (
                                     <span
                                         key={t}
                                         className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]/10 rounded-md px-2 py-1"
