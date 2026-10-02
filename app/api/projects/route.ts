@@ -8,7 +8,7 @@ export async function GET() {
         const projects = await db
             .collection('projects')
             .find({})
-            .sort({ createdAt: -1 })
+            .sort({ createdAt: -1, _id: -1 })
             .toArray();
 
         return NextResponse.json({ success: true, projects }, {

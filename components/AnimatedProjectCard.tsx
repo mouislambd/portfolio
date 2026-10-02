@@ -44,13 +44,21 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
 
             {/* Project Media Container */}
             <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <ParticleNetwork />
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
-                    <h2 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
-                        {title}
-                    </h2>
-                </div>
+                {(imagePath || previewImage) ? (
+                    <img 
+                        src={imagePath || previewImage} 
+                        alt={title} 
+                        className="w-full h-full object-cover" 
+                    />
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <ParticleNetwork />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
+                        <h2 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
+                            {title}
+                        </h2>
+                    </div>
+                )}
             </div>
 
             <motion.h3
