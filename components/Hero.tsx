@@ -129,14 +129,27 @@ export default function Hero() {
                                 Projects
                             </div>
                         </motion.div>
-                        <div className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm">
+                        <motion.div 
+                            className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm"
+                            animate={{
+                                scale: [1, 1.05, 1],
+                                rotate: [0, -2, 2, 0],
+                                borderColor: ["rgba(26, 32, 44, 0.1)", "#E05A47", "rgba(26, 32, 44, 0.1)"],
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                repeat: Infinity,
+                                repeatDelay: 2,
+                                ease: "circIn",
+                            }}
+                        >
                             <div className="text-[#1A202C] text-2xl font-bold">
                                 MERN
                             </div>
                             <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium">
                                 Stack
                             </div>
-                        </div>
+                        </motion.div>
                         <Link 
                             href="/contact"
                             className="group bg-white p-6 rounded-2xl border-2 border-[#E05A47]/30 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10 hover:bg-[#E05A47]/5 block relative overflow-hidden"
