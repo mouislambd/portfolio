@@ -85,7 +85,7 @@ export default function Hero() {
                     >
                         <motion.span
                             whileHover={{ x: 5, color: '#E05A47' }}
-                            className="text-[#1A202C] text-lg sm:text-xl font-medium cursor-default"
+                            className="text-[#000000] text-xl sm:text-2xl font-semibold cursor-default"
                         >
                             Full Stack Developer
                         </motion.span>
