@@ -72,7 +72,7 @@ export default function Hero() {
 
                     <motion.h1
                         variants={item}
-                        className="font-display text-5xl sm:text-6xl md:text-[72px] font-medium leading-[1.05] tracking-tight text-[#1A202C]"
+                        className="font-display text-5xl sm:text-6xl md:text-[84px] font-extrabold leading-[1.05] tracking-tight text-[#000000]"
                     >
                         Kanich
                         <br />
@@ -81,11 +81,11 @@ export default function Hero() {
 
                     <motion.div
                         variants={item}
-                        className="mt-8 border-l-2 border-[#E05A47]/40 pl-5 flex flex-col gap-1"
+                        className="mt-8 border-l-4 border-[#E05A47] pl-6 flex flex-col gap-2"
                     >
                         <motion.span
                             whileHover={{ x: 5, color: '#E05A47' }}
-                            className="text-[#1A202C] text-sm sm:text-base cursor-default"
+                            className="text-[#1A202C] text-lg sm:text-xl font-medium cursor-default"
                         >
                             Full Stack Developer
                         </motion.span>
@@ -93,7 +93,7 @@ export default function Hero() {
                             whileHover={{ x: 5, color: '#E05A47', textShadow: '0 0 8px rgba(224, 90, 71, 0.4)' }}
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 3, repeat: Infinity }}
-                            className="text-[#4A5568] text-sm sm:text-base cursor-default"
+                            className="text-[#4A5568] text-base sm:text-lg cursor-default"
                         >
                             Future Data Scientist
                         </motion.span>
@@ -101,7 +101,7 @@ export default function Hero() {
                             whileHover={{ x: 5, color: '#E05A47', textShadow: '0 0 8px rgba(224, 90, 71, 0.4)' }}
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                            className="text-[#E05A47]/80 text-sm sm:text-base cursor-default"
+                            className="text-[#E05A47]/80 text-base sm:text-lg cursor-default"
                         >
                             Aspiring AI Engineer, In sha Allah
                         </motion.span>
@@ -109,12 +109,12 @@ export default function Hero() {
 
                     <motion.div
                         variants={item}
-                        className="mt-10 grid grid-cols-3 gap-px border-[#1A202C]/15 rounded-xl overflow-hidden border border-[#1A202C]/10 max-w-lg"
+                        className="mt-12 grid grid-cols-3 gap-4 max-w-lg"
                     >
                         <motion.div
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20"
+                            className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10"
                             onClick={() => {
                                 const element = document.getElementById('projects');
                                 if (element) {
@@ -122,34 +122,33 @@ export default function Hero() {
                                 }
                             }}
                         >
-                            <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
+                            <div className="text-[#C84B31] text-2xl font-bold">
                                 <Counter value={9} />
                             </div>
-                            <div className="text-[#1A202C] text-[11px] mt-1">
-                                projects shipped
+                            <div className="text-[#1A202C] text-xs mt-2 uppercase tracking-wide font-medium">
+                                Projects
                             </div>
                         </motion.div>
-                        <div className="bg-white px-4 py-4 sm:px-5 sm:py-5">
-                            <div className="text-[#1A202C] text-lg sm:text-xl font-medium">
+                        <div className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm">
+                            <div className="text-[#1A202C] text-2xl font-bold">
                                 MERN
                             </div>
-                            <div className="text-[#4A5568] text-[11px] mt-1">
-                                core stack
+                            <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium">
+                                Stack
                             </div>
                         </div>
                         <Link 
                             href="/contact"
-                            className="group bg-white px-4 py-4 sm:px-5 sm:py-5 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/20 hover:bg-[#E05A47]/5 block relative overflow-hidden"
+                            className="group bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10 hover:bg-[#E05A47]/5 block relative overflow-hidden"
                         >
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#E05A47]/30 rounded-xl transition-all duration-300" />
                             <motion.div
                                 animate={{ opacity: [0.5, 1, 0.5] }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             >
-                                <div className="text-[#C84B31] text-lg sm:text-xl font-medium">
+                                <div className="text-[#C84B31] text-2xl font-bold">
                                     Open
                                 </div>
-                                <div className="text-[#4A5568] text-[11px] mt-1 flex items-center gap-1">
+                                <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium flex items-center gap-1">
                                     to work 
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#E05A47] animate-pulse" />
                                 </div>
