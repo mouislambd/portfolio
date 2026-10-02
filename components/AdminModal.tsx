@@ -6,7 +6,7 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
   const [newProject, setNewProject] = useState({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
 
   const addProject = () => {
-    setProjects([...projects, { ...newProject, id: Date.now() }]);
+    setProjects([{ ...newProject, id: Date.now() }, ...projects]);
     setNewProject({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
   };
 
