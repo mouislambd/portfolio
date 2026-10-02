@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import { Space_Grotesk, Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import './globals.css';

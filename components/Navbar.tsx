@@ -98,7 +98,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-[#1A202C] focus-ring"
+            className="md:hidden text-[#000000] focus-ring"
             aria-label="Open menu"
           >
             <FiMenu size={22} />
