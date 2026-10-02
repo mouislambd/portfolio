@@ -28,6 +28,15 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
 
         <div className="space-y-6">
           <div>
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-sm font-medium">Current Projects</h4>
+              <button 
+                onClick={() => { setProjects([]); localStorage.removeItem('projects'); }}
+                className="text-xs text-[#E05A47] hover:underline"
+              >
+                Clear All Projects
+              </button>
+            </div>
             <div className="space-y-2 mb-4">
               {projects.map(p => (
                 <div key={p.id} className="flex justify-between items-center p-3 bg-gray-50 rounded border border-[#1A202C]/5">
