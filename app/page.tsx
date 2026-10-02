@@ -3,7 +3,11 @@ import { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ProjectsPreview from '@/components/ProjectsPreview';
 import GithubStats from '@/components/GithubStats';
-import Footer from '@/components/Footer';
+'use client';
+import { useState, useEffect } from 'react';
+import Hero from '@/components/Hero';
+import ProjectsPreview from '@/components/ProjectsPreview';
+import GithubStats from '@/components/GithubStats';
 
 export default function Home() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -31,7 +35,6 @@ export default function Home() {
       <Hero />
       <ProjectsPreview projects={projects} />
       <GithubStats />
-      <Footer />
     </main>
   );
 }
