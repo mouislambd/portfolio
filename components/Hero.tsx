@@ -114,7 +114,7 @@ export default function Hero() {
                         <motion.div
                             whileHover={{ scale: 1.05, y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10"
+                            className="bg-white p-6 rounded-2xl border-2 border-[#E05A47]/30 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10"
                             onClick={() => {
                                 const element = document.getElementById('projects');
                                 if (element) {
@@ -139,7 +139,7 @@ export default function Hero() {
                         </div>
                         <Link 
                             href="/contact"
-                            className="group bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10 hover:bg-[#E05A47]/5 block relative overflow-hidden"
+                            className="group bg-white p-6 rounded-2xl border-2 border-[#E05A47]/30 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-[#C84B31]/10 hover:bg-[#E05A47]/5 block relative overflow-hidden"
                         >
                             <motion.div
                                 animate={{ opacity: [0.5, 1, 0.5] }}
@@ -149,7 +149,7 @@ export default function Hero() {
                                     Open
                                 </div>
                                 <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium flex items-center gap-1">
-                                    to work 
+                                    to work <span className="text-[#E05A47]">(Click)</span>
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#E05A47] animate-pulse" />
                                 </div>
                             </motion.div>
