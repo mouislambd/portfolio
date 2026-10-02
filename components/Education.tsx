@@ -96,7 +96,7 @@ export default function Education() {
                                 ))}
                             </div>
                             <p className="font-mono text-xs text-[#E05A47] mt-2">
-                                2023 — 2027 (In sha Allah)
+                                2023 — 2027 (Expected)
                             </p>
                         </div>
                     </div>

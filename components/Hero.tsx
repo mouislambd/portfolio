@@ -103,7 +103,7 @@ export default function Hero() {
                             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                             className="text-[#E05A47]/80 text-base sm:text-lg cursor-default"
                         >
-                            Aspiring AI Engineer, In sha Allah
+                            Aspiring AI Engineer, 
                         </motion.span>
                     </motion.div>
 
