@@ -11,6 +11,7 @@ interface AnimatedProjectCardProps {
     githubLink: string;
     videoUrl?: string;
     previewImage?: string;
+    imagePath?: string;
 }
 
 const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
@@ -21,6 +22,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
     githubLink,
     videoUrl,
     previewImage,
+    imagePath,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -42,9 +44,9 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
 
             {/* Project Media Container */}
             <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
-                {previewImage ? (
+                {(imagePath || previewImage) ? (
                     <img 
-                        src={previewImage} 
+                        src={imagePath || previewImage} 
                         alt={title} 
                         className="w-full h-full object-cover" 
                     />

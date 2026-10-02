@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     try {
         const body = await request.json();
-        const { title, description, tech, liveLink, githubLink, previewImage } = body;
+        const { title, description, tech, liveLink, githubLink, previewImage, imagePath } = body;
 
         if (!title || !description) {
             return NextResponse.json(
@@ -59,6 +59,7 @@ export async function POST(request: NextRequest) {
             liveLink: liveLink || '',
             githubLink: githubLink || '',
             previewImage: previewImage || '',
+            imagePath: imagePath || '',
             createdAt: new Date(),
         };
 

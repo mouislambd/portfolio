@@ -65,9 +65,9 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
                             <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
-                                {project.previewImage ? (
+                                {(project.imagePath || project.previewImage) ? (
                                     <img 
-                                        src={project.previewImage} 
+                                        src={project.imagePath || project.previewImage} 
                                         alt={project.title} 
                                         className="w-full h-full object-cover" 
                                     />
