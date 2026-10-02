@@ -190,7 +190,7 @@ export default function Hero() {
                         className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20"
                     >
                         <img
-                            src="/images/portfolio.jpeg"
+                            src="/images/portfolio.png"
                             alt="Kanich Fatema Mou"
                             className="w-full h-full object-cover object-left"
                         />
