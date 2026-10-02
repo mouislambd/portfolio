@@ -41,12 +41,36 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Load projects ONLY from localStorage on mount
+        const defaultProjects = [
+            {
+                id: 1,
+                title: "keep-keeper",
+                image: "/pic.png",
+                tags: "Next.js,Tailwind CSS,React",
+                live: "https://keenkeeper-beryl.vercel.app/",
+                github: "https://github.com/mouislambd/assignment-7.git",
+                description: "Fully functional productivity web application."
+            },
+            {
+                id: 2,
+                title: "github-issues-trackers",
+                image: "",
+                tags: "JavaScript,OpenWeather API",
+                live: "#",
+                github: "#",
+                description: "GitHub issues tracker app."
+            }
+        ];
+
+        // Load from localStorage if exists, else use defaults
         const saved = localStorage.getItem('projects');
-        const localProjects = saved ? JSON.parse(saved) : [];
+        const localProjects = saved ? JSON.parse(saved) : defaultProjects;
         
-        // Normalize local projects
-        const normalizedLocal = localProjects.map((lp: any) => ({
+        // If empty (and no defaults), ensure we use defaults
+        const projectsToUse = localProjects.length > 0 ? localProjects : defaultProjects;
+        
+        // Normalize projects for the component
+        const normalizedProjects = projectsToUse.map((lp: any) => ({
             _id: lp.id?.toString() || Math.random().toString(),
             title: lp.title,
             description: lp.description,
@@ -54,10 +78,9 @@ export default function Projects() {
             liveLink: lp.live,
             githubLink: lp.github,
             previewImage: lp.image,
-            createdAt: new Date(0), // Default old date
         }));
         
-        setProjects(normalizedLocal);
+        setProjects(normalizedProjects);
         setLoading(false);
     }, []);
 
