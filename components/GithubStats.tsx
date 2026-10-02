@@ -13,34 +13,22 @@ const GithubStats: React.FC = () => {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12">
-      <div className="bg-[#1c232d] border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
-        {/* Category Label */}
-        <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold block mb-1">
-          CONTRIBUTIONS
-        </span>
+    <section className="w-full max-w-6xl mx-auto px-4 py-16">
+      {/* Activity Header */}
+      <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold">Activity</span>
+      <h2 className="text-3xl font-bold text-white mt-1 mb-2">GitHub Contributions</h2>
+      <p className="text-gray-400 text-sm mb-8">Real-time coding activity on GitHub (@mouislambd)</p>
 
-        {/* Section Heading */}
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
-          GitHub Activity
-        </h2>
-
-        {/* Subtitle */}
-        <p className="text-gray-400 text-sm mb-6">
-          Real-time coding activity on GitHub (@mouislambd)
-        </p>
-
-        {/* Calendar Container with responsive overflow */}
-        <div className="overflow-x-auto pb-2">
-          <GitHubCalendar 
-            username="mouislambd" 
-            theme={explicitTheme}
-            colorScheme="dark"
-            blockSize={12}
-            blockMargin={4}
-            fontSize={14}
-          />
-        </div>
+      {/* Calendar Wrapper - Native rendering without background container */}
+      <div className="overflow-x-auto pb-4">
+        <GitHubCalendar 
+          username="mouislambd" 
+          theme={explicitTheme}
+          colorScheme="dark"
+          blockSize={12}
+          blockMargin={4}
+          fontSize={14}
+        />
       </div>
     </section>
   );
