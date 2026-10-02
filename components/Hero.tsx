@@ -130,7 +130,7 @@ export default function Hero() {
                             </div>
                         </motion.div>
                         <motion.div 
-                            className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm"
+                            className="bg-white p-6 rounded-2xl border-2 border-[#1A202C]/10 shadow-sm relative overflow-hidden"
                             animate={{
                                 y: [0, -8, 0],
                                 scale: [1, 1.02, 1],
@@ -141,10 +141,15 @@ export default function Hero() {
                                 ease: "easeInOut",
                             }}
                         >
-                            <div className="text-[#1A202C] text-2xl font-bold">
+                            <motion.div 
+                                className="absolute inset-0 bg-gradient-to-br from-[#E05A47]/30 via-transparent to-[#E05A47]/30 opacity-0"
+                                animate={{ opacity: [0, 0.5, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            />
+                            <div className="text-[#1A202C] text-2xl font-bold relative z-10">
                                 MERN
                             </div>
-                            <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium">
+                            <div className="text-[#4A5568] text-xs mt-2 uppercase tracking-wide font-medium relative z-10">
                                 Stack
                             </div>
                         </motion.div>
