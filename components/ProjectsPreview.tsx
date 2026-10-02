@@ -57,7 +57,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
-                    {projects.slice(0, 2).map((project: any) => (
+                    {projects.map((project: any) => (
                         <motion.div
                             key={project.id}
                             variants={item}

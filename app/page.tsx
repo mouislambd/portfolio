@@ -20,7 +20,7 @@ export default function Home() {
                 const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
                 return dateB - dateA;
             });
-            setProjects(sortedProjects);
+            setProjects(sortedProjects.slice(0, 2));
         }
       })
       .catch(console.error);

@@ -155,7 +155,7 @@ export default function Projects() {
                                         liveLink={project.liveLink}
                                         githubLink={project.githubLink}
                                         videoUrl={project.videoUrl} 
-                                        fallbackImageUrl={project.previewImage}
+                                        previewImage={project.previewImage}
                                     />
                             ))}
                         </AnimatePresence>
