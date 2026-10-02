@@ -49,6 +49,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
                         src={imagePath || previewImage} 
                         alt={title} 
                         className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -65,7 +66,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
             >
                 {title}
             </motion.h3>
-            <p className="text-[#4A5568] text-sm mb-4 line-clamp-2">
+            <p className="text-[#4A5568] text-sm mb-4 leading-relaxed">
                 {description}
             </p>
 

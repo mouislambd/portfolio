@@ -71,6 +71,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                                         alt={project.title} 
                                         className="w-full h-full object-cover" 
                                         loading="lazy"
+                                        referrerPolicy="no-referrer"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center relative">
