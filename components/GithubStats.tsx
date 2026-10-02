@@ -14,10 +14,11 @@ const GithubStats: React.FC = () => {
 
   return (
     <section className="py-16 px-6 max-w-5xl mx-auto">
-      <div className="bg-slate-900/50 border border-pink-500/20 rounded-2xl p-8 shadow-[0_0_30px_-10px_rgba(236,72,153,0.15)] backdrop-blur-sm">
+      <div className="bg-[#1E1E1E] border border-white/10 rounded-2xl p-8 shadow-xl">
         <div className="mb-8">
-          <h2 className="text-2xl font-display font-medium text-white mb-2">GitHub Activity</h2>
-          <p className="text-slate-400 text-sm">Real-time coding activity on GitHub (@mouislambd)</p>
+          <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold">Contributions</span>
+          <h2 className="text-3xl font-bold text-white mt-1">GitHub Activity</h2>
+          <p className="text-gray-400 text-sm mt-1 mb-6">Real-time coding activity on GitHub (@mouislambd)</p>
         </div>
         
         <div className="overflow-x-auto pb-4">
