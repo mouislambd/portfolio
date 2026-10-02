@@ -83,6 +83,17 @@ export default function Navbar() {
                 </li>
               );
             })}
+            <li>
+                <a
+                  href="https://github.com/mouislambd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4A5568] hover:text-[#1A202C] transition-colors focus-ring"
+                  aria-label="GitHub"
+                >
+                  <FiGithub size={18} />
+                </a>
+            </li>
           </ul>
 
           <button
