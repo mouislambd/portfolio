@@ -1,9 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
-import Hero from '@/components/Hero';
-import ProjectsPreview from '@/components/ProjectsPreview';
-import GithubStats from '@/components/GithubStats';
-'use client';
+
 import { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ProjectsPreview from '@/components/ProjectsPreview';
