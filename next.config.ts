@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  turbopack: {
-    root: "C:\\Users\\MOU\\portfolio\\mou-portfolio",
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
