@@ -3,6 +3,9 @@
 import React from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 const GithubStats: React.FC = () => {
   const explicitTheme = {
     light: ['#312e81', '#831843', '#be185d', '#ec4899', '#f472b6'],
