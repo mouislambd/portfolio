@@ -88,6 +88,13 @@ export default function Education() {
                             <p className="text-[#4A5568] text-sm mt-1">
                                 Rangpur Ideal Institute of Technology (RIIT)
                             </p>
+                            <div className="mt-3 flex flex-wrap gap-2">
+                                {['Python', 'Data Structure', 'Algorithm', 'Security System', 'Networking', 'Database Management', 'App Deployment'].map(subject => (
+                                    <span key={subject} className="px-2 py-1 bg-[#E05A47]/10 text-[#E05A47] text-[10px] font-mono font-bold rounded-md">
+                                        {subject}
+                                    </span>
+                                ))}
+                            </div>
                             <p className="font-mono text-xs text-[#E05A47] mt-2">
                                 2023 — 2027 (In sha Allah)
                             </p>
