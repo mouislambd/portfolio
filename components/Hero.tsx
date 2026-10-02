@@ -184,15 +184,15 @@ export default function Hero() {
                 </motion.div>
 
                 <div
-                    className="relative"
+                    className="relative md:flex justify-center"
                 >
                     <div 
-                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 border-[#E05A47] bg-white shadow-xl shadow-coral/20"
+                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-white shadow-2xl shadow-[#E05A47]/20 ring-4 ring-[#E05A47]/20"
                     >
                         <img
                             src="/images/portfolio.png"
                             alt="Kanich Fatema Mou"
-                            className="w-full h-full object-cover object-left"
+                            className="w-full h-full object-cover object-center"
                         />
                     </div>
                 </div>
