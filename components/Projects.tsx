@@ -41,44 +41,24 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch from API
-        fetch('/api/projects', { cache: 'no-store' } as any)
-            .then((res) => res.json())
-            .then((data) => {
-                let apiProjects = [];
-                if (data.success) {
-                    apiProjects = data.projects;
-                }
-                
-                // Merge with localStorage projects
-                const saved = localStorage.getItem('projects');
-                const localProjects = saved ? JSON.parse(saved) : [];
-                
-                // Normalize local projects to match API structure
-                const normalizedLocal = localProjects.map((lp: any) => ({
-                    _id: lp.id?.toString() || Math.random().toString(),
-                    title: lp.title,
-                    description: lp.description,
-                    tech: lp.tags ? (lp.tags || '').split(',') : [],
-                    liveLink: lp.live,
-                    githubLink: lp.github,
-                    createdAt: new Date(0), // Default old date
-                }));
-                
-                // Combine and remove duplicates based on title
-                const allProjects = [...apiProjects, ...normalizedLocal.filter((nl: any) => !apiProjects.find((ap: any) => ap.title === nl.title))];
-                
-                // Sort by date descending
-                allProjects.sort((a, b) => {
-                    const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-                    const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-                    return dateB - dateA;
-                });
-                
-                setProjects(allProjects);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
+        // Load projects ONLY from localStorage on mount
+        const saved = localStorage.getItem('projects');
+        const localProjects = saved ? JSON.parse(saved) : [];
+        
+        // Normalize local projects
+        const normalizedLocal = localProjects.map((lp: any) => ({
+            _id: lp.id?.toString() || Math.random().toString(),
+            title: lp.title,
+            description: lp.description,
+            tech: lp.tags ? (lp.tags || '').split(',') : [],
+            liveLink: lp.live,
+            githubLink: lp.github,
+            previewImage: lp.image,
+            createdAt: new Date(0), // Default old date
+        }));
+        
+        setProjects(normalizedLocal);
+        setLoading(false);
     }, []);
 
     const filtered = useMemo(() => {
