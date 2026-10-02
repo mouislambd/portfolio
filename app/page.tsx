@@ -14,8 +14,13 @@ export default function Home() {
     if (saved) {
         try {
             const parsed = JSON.parse(saved);
+            // Ensure previewImage is mapped from image if necessary
+            const normalized = parsed.map((p: any) => ({
+                ...p,
+                previewImage: p.previewImage || p.image // Check both potential property names
+            }));
             // Slice the first 2
-            setProjects(parsed.slice(0, 2));
+            setProjects(normalized.slice(0, 2));
         } catch (e) {
             console.error('Error parsing projects from localStorage', e);
         }
