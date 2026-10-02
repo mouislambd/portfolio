@@ -132,15 +132,13 @@ export default function Hero() {
                         <motion.div 
                             className="bg-white p-6 rounded-2xl border border-[#1A202C]/10 shadow-sm"
                             animate={{
-                                scale: [1, 1.05, 1],
-                                rotate: [0, -2, 2, 0],
-                                borderColor: ["rgba(26, 32, 44, 0.1)", "#E05A47", "rgba(26, 32, 44, 0.1)"],
+                                y: [0, -8, 0],
+                                scale: [1, 1.02, 1],
                             }}
                             transition={{
-                                duration: 0.5,
+                                duration: 3,
                                 repeat: Infinity,
-                                repeatDelay: 2,
-                                ease: "circIn",
+                                ease: "easeInOut",
                             }}
                         >
                             <div className="text-[#1A202C] text-2xl font-bold">
