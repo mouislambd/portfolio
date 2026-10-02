@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 
 export const revalidate = 0;
@@ -13,14 +14,24 @@ const GithubStats: React.FC = () => {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-16">
-      {/* Activity Header */}
-      <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold">Activity</span>
-      <h2 className="text-3xl font-bold text-white mt-1 mb-2">GitHub Contributions</h2>
-      <p className="text-gray-400 text-sm mb-8">Real-time coding activity on GitHub (@mouislambd)</p>
+    <section className="w-full max-w-6xl mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
+      {/* Animated Activity Header */}
+      <motion.h2 
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-6xl md:text-8xl font-black tracking-wider bg-gradient-to-r from-[#C84B31] via-[#E86A50] to-[#E580A1] bg-clip-text text-transparent drop-shadow-lg"
+      >
+        ACTIVITY
+      </motion.h2>
+      
+      {/* Subtitle */}
+      <p className="text-gray-400 text-base md:text-lg mt-3 mb-10">
+        Real-time coding activity on GitHub (@mouislambd)
+      </p>
 
-      {/* Calendar Wrapper - Native rendering without background container */}
-      <div className="overflow-x-auto pb-4">
+      {/* Centered Calendar Wrapper */}
+      <div className="flex justify-center w-full overflow-x-auto pb-4">
         <GitHubCalendar 
           username="mouislambd" 
           theme={explicitTheme}
