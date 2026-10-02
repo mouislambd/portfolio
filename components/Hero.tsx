@@ -192,7 +192,7 @@ export default function Hero() {
                         <img
                             src="/images/portfolio.png"
                             alt="Kanich Fatema Mou"
-                            className="w-full h-full object-cover object-center scale-[1.15] transition-transform duration-500 hover:scale-[1.2]"
+                            className="w-full h-full object-cover object-center scale-[1.3] transition-transform duration-500 hover:scale-[1.4]"
                         />
                     </div>
                 </div>
