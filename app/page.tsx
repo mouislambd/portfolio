@@ -14,12 +14,13 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-            // Sort by date descending
+            // Sort by date descending and take top 2
             const sortedProjects = [...data.projects].sort((a, b) => {
                 const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
                 const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
                 return dateB - dateA;
             });
+            // Ensure newest are at the front, then slice the first 2
             setProjects(sortedProjects.slice(0, 2));
         }
       })
