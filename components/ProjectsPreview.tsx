@@ -64,12 +64,22 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             whileHover={{ y: -4 }}
                             className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
                         >
-                            <div className="w-full h-48 rounded-xl bg-[#1A202C] mb-5 flex items-center justify-center overflow-hidden relative">
-                                <ParticleNetwork />
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
-                                <h3 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
-                                    {project.title}
-                                </h3>
+                            <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
+                                {project.previewImage ? (
+                                    <img 
+                                        src={project.previewImage} 
+                                        alt={project.title} 
+                                        className="w-full h-full object-cover" 
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center relative">
+                                        <ParticleNetwork />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#C84B31]/40 to-[#1A202C]/60" />
+                                        <h3 className="text-white font-display text-xl font-bold relative z-10 px-4 text-center drop-shadow-md">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                )}
                             </div>
 
                             <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
