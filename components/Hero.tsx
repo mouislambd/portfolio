@@ -72,7 +72,7 @@ export default function Hero() {
 
                     <motion.h1
                         variants={item}
-                        className="font-display text-4xl sm:text-5xl md:text-[52px] font-medium leading-[1.05] tracking-tight text-[#1A202C]"
+                        className="font-display text-5xl sm:text-6xl md:text-[72px] font-medium leading-[1.05] tracking-tight text-[#1A202C]"
                     >
                         Kanich
                         <br />
