@@ -70,6 +70,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                                         src={project.previewImage} 
                                         alt={project.title} 
                                         className="w-full h-full object-cover" 
+                                        loading="lazy"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center relative">
@@ -84,9 +85,9 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
                                 {project.title}
                             </h3>
-                            <p className="text-[#4A5568] text-sm mb-4">
-                                {project.description}
-                            </p>
+                                <p className="text-[#4A5568] text-sm mb-4 break-words leading-relaxed">
+                                    {project.description}
+                                </p>
 
                             <div className="flex flex-wrap gap-2 mb-5">
                                 {project.tags?.split(',')?.map((t: string) => (
