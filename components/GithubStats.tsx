@@ -13,15 +13,25 @@ const GithubStats: React.FC = () => {
   };
 
   return (
-    <section className="py-16 px-6 max-w-5xl mx-auto">
-      <div className="bg-[#1E1E1E] border border-white/10 rounded-2xl p-8 shadow-xl">
-        <div className="mb-8">
-          <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold">Contributions</span>
-          <h2 className="text-3xl font-bold text-white mt-1">GitHub Activity</h2>
-          <p className="text-gray-400 text-sm mt-1 mb-6">Real-time coding activity on GitHub (@mouislambd)</p>
-        </div>
-        
-        <div className="overflow-x-auto pb-4">
+    <section className="max-w-6xl mx-auto px-4 py-12">
+      <div className="bg-[#1c232d] border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        {/* Category Label */}
+        <span className="text-[#C84B31] uppercase tracking-widest text-xs font-semibold block mb-1">
+          CONTRIBUTIONS
+        </span>
+
+        {/* Section Heading */}
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+          GitHub Activity
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-400 text-sm mb-6">
+          Real-time coding activity on GitHub (@mouislambd)
+        </p>
+
+        {/* Calendar Container with responsive overflow */}
+        <div className="overflow-x-auto pb-2">
           <GitHubCalendar 
             username="mouislambd" 
             theme={explicitTheme}
