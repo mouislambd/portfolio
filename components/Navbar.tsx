@@ -39,14 +39,14 @@ export default function Navbar() {
     <>
           <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-              ? 'bg-[#1A202C]/60 backdrop-blur-md border-b border-[#1A202C]/5'
+              ? 'bg-[#1A202C]/30 backdrop-blur-md border-b border-[#1A202C]/5'
               : 'bg-transparent border-b border-transparent'
               }`}
           >
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
           <Link
             href="/"
-            className="group flex items-center gap-3 text-[#1A202C] focus-ring"
+            className="group flex items-center gap-3 text-[#000000] focus-ring"
           >
             <div 
               className="hidden sm:flex flex-col justify-center leading-tight font-bold text-[#C84B31] transition-opacity group-hover:opacity-80"
@@ -69,7 +69,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`relative text-sm font-mono tracking-wide transition-colors focus-ring ${active ? 'text-[#E05A47]' : 'text-[#4A5568] hover:text-[#1A202C]'
+                    className={`relative text-sm font-mono tracking-wide transition-colors focus-ring ${active ? 'text-[#E05A47]' : 'text-[#000000] hover:text-[#000000]'
                       }`}
                   >
                     {link.name}
@@ -88,7 +88,7 @@ export default function Navbar() {
                   href="https://github.com/mouislambd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#4A5568] hover:text-[#1A202C] transition-colors focus-ring"
+                  className="text-[#000000] hover:text-[#000000] transition-colors focus-ring"
                   aria-label="GitHub"
                 >
                   <FiGithub size={18} />
@@ -112,12 +112,12 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-[#1A202C]/95 backdrop-blur-lg md:hidden"
+            className="fixed inset-0 z-[60] bg-[#1A202C]/80 backdrop-blur-lg md:hidden"
           >
             <div className="flex justify-end px-6 py-5">
               <button
                 onClick={() => setMenuOpen(false)}
-                className="text-[#1A202C] focus-ring"
+                className="text-[#000000] focus-ring"
                 aria-label="Close menu"
               >
                 <FiX size={24} />
@@ -143,7 +143,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`font-display text-3xl ${pathname === link.href ? 'text-[#E05A47]' : 'text-[#1A202C]'
+                    className={`font-display text-3xl ${pathname === link.href ? 'text-[#E05A47]' : 'text-[#000000]'
                       }`}
                   >
                     {link.name}
@@ -161,7 +161,7 @@ export default function Navbar() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
+                    className="text-[#000000] hover:text-[#E05A47] transition-colors focus-ring"
                     aria-label={social.name}
                   >
                     <Icon size={20} />

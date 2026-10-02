@@ -4,6 +4,12 @@ import Navbar from '@/components/Navbar';
 import './globals.css';
 import Footer from '@/components/Footer';
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Kanich Fatema Mou | Portfolio',
+  description: 'Portfolio of Kanich Fatema Mou, showcasing projects and skills.',
+};
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
