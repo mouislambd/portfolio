@@ -9,22 +9,17 @@ export default function Home() {
   const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
-    // Fetch from API
-    fetch('/api/projects', { cache: 'no-store' } as any)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-            // Sort by date descending and take top 2
-            const sortedProjects = [...data.projects].sort((a, b) => {
-                const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-                const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-                return dateB - dateA;
-            });
-            // Ensure newest are at the front, then slice the first 2
-            setProjects(sortedProjects.slice(0, 2));
+    // Read from localStorage
+    const saved = localStorage.getItem('projects');
+    if (saved) {
+        try {
+            const parsed = JSON.parse(saved);
+            // Slice the first 2
+            setProjects(parsed.slice(0, 2));
+        } catch (e) {
+            console.error('Error parsing projects from localStorage', e);
         }
-      })
-      .catch(console.error);
+    }
   }, []);
 
   return (
