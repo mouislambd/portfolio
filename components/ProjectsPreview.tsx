@@ -25,7 +25,7 @@ const item = {
 
 export default function ProjectsPreview({ projects }: { projects: any[] }) {
     return (
-        <section id="projects" className="relative px-6 py-24 overflow-hidden bg-[#080b10] text-white">
+        <section id="projects" className="relative px-6 py-24 overflow-hidden">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -43,7 +43,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                         <motion.div
                             key={project.id}
                             variants={item}
-                            className={`bg-[#0d1117] rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
+                            className={`rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
                         >
                             <div className="h-60 rounded-lg overflow-hidden mb-6 bg-white/5">
                                 {project.image ? (
