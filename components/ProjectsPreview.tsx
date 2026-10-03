@@ -29,8 +29,8 @@ export default function ProjectsPreview() {
                             }
                         </div>
                         <div style={{ padding: 20 }}>
-                            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#e2e8f0", marginBottom: 8 }}>{p.title}</h3>
-                            <p style={{ fontSize: 14, color: "#94a3b8", marginBottom: 16 }}>{p.description}</p>
+                            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1A202C", marginBottom: 8 }}>{p.title}</h3>
+                            <p style={{ fontSize: 14, color: "#4A5568", marginBottom: 16 }}>{p.description}</p>
                             <div style={{ display: "flex", gap: 12 }}>
                                 <a href={p.live} target="_blank" rel="noreferrer" style={{ color: "#E05A47", fontSize: 13, textDecoration: "none" }}>↗ Live</a>
                                 <a href={p.github} target="_blank" rel="noreferrer" style={{ color: "#94a3b8", fontSize: 13, textDecoration: "none" }}>⌥ GitHub</a>
