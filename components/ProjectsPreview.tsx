@@ -16,8 +16,8 @@ export default function ProjectsPreview() {
         <section>
             <p style={{ color: "#E05A47", fontFamily: "monospace", fontSize: 11, letterSpacing: 4, marginBottom: 8 }}>PREVIEW</p>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
-                <h2 style={{ fontSize: 32, fontWeight: 800, color: "#e2e8f0" }}>Selected Work</h2>
-                <Link href="/projects" style={{ color: "#E05A47", fontSize: 14, textDecoration: "none" }}>View all →</Link>
+                <h2 style={{ fontSize: 32, fontWeight: 800, color: "#1A202C" }}>Selected Work</h2>
+                <Link href="/projects" style={{ color: "#E05A47", fontSize: 16, fontWeight: 600, textDecoration: "none" }}>View all →</Link>
             </div>
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
                 {projects.slice(0, 2).map((p, i) => (
@@ -31,9 +31,9 @@ export default function ProjectsPreview() {
                         <div style={{ padding: 20 }}>
                             <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1A202C", marginBottom: 8 }}>{p.title}</h3>
                             <p style={{ fontSize: 14, color: "#4A5568", marginBottom: 16 }}>{p.description}</p>
-                            <div style={{ display: "flex", gap: 12 }}>
-                                <a href={p.live} target="_blank" rel="noreferrer" style={{ color: "#E05A47", fontSize: 13, textDecoration: "none" }}>↗ Live</a>
-                                <a href={p.github} target="_blank" rel="noreferrer" style={{ color: "#94a3b8", fontSize: 13, textDecoration: "none" }}>⌥ GitHub</a>
+                            <div style={{ display: "flex", gap: 16 }}>
+                                <a href={p.live} target="_blank" rel="noreferrer" style={{ color: "#E05A47", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>↗ Live</a>
+                                <a href={p.github} target="_blank" rel="noreferrer" style={{ color: "#1A202C", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>⌥ GitHub</a>
                             </div>
                         </div>
                     </div>
