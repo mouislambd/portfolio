@@ -4,23 +4,72 @@ import { FiX, FiEdit2, FiTrash2, FiPlus } from 'react-icons/fi';
 import { supabase } from '@/lib/supabase';
 
 export default function AdminModal({ onClose, projects, setProjects }: { onClose: () => void, projects: any[], setProjects: any }) {
-  const [newProject, setNewProject] = useState({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
+  const [newProject, setNewProject] = useState({ id: null, title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
+  const [isEditing, setIsEditing] = useState(false);
 
-  const addProject = async () => {
-    const { data, error } = await supabase
-      .from('projects')
-      .insert([newProject])
-      .select();
+  const saveProject = async () => {
+    if (isEditing && newProject.id) {
+        // Update
+        const { error } = await supabase
+            .from('projects')
+            .update({
+                title: newProject.title,
+                description: newProject.description,
+                image: newProject.image,
+                live: newProject.live,
+                github: newProject.github,
+                tags: newProject.tags,
+                featured: newProject.featured
+            })
+            .eq('id', newProject.id);
 
-    if (error) {
-      console.error('Error adding project:', error);
-      return;
+        if (error) {
+            console.error('Error updating project:', error);
+            return;
+        }
+
+        setProjects(projects.map(p => p.id === newProject.id ? { ...p, ...newProject } : p));
+    } else {
+        // Add
+        const { data, error } = await supabase
+            .from('projects')
+            .insert([{
+                title: newProject.title,
+                description: newProject.description,
+                image: newProject.image,
+                live: newProject.live,
+                github: newProject.github,
+                tags: newProject.tags,
+                featured: newProject.featured
+            }])
+            .select();
+
+        if (error) {
+            console.error('Error adding project:', error);
+            return;
+        }
+
+        if (data) {
+            setProjects([data[0], ...projects]);
+        }
     }
+    
+    setNewProject({ id: null, title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
+    setIsEditing(false);
+  };
 
-    if (data) {
-      setProjects([data[0], ...projects]);
-      setNewProject({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
-    }
+  const startEdit = (project: any) => {
+    setNewProject({
+        id: project.id,
+        title: project.title,
+        description: project.description,
+        image: project.image,
+        live: project.live,
+        github: project.github,
+        tags: project.tags,
+        featured: project.featured
+    });
+    setIsEditing(true);
   };
 
   const deleteProject = async (id: number) => {
@@ -57,7 +106,7 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
                 <div key={p.id} className="flex justify-between items-center p-3 bg-gray-50 rounded border border-[#1A202C]/5">
                   <span className="text-sm font-medium">{p.title}</span>
                   <div className="flex gap-2">
-                    <button className="text-[#4A5568] hover:text-[#31AAA9]"><FiEdit2 /></button>
+                    <button onClick={() => startEdit(p)} className="text-[#4A5568] hover:text-[#31AAA9]"><FiEdit2 /></button>
                     <button onClick={() => deleteProject(p.id)} className="text-[#4A5568] hover:text-[#E05A47]"><FiTrash2 /></button>
                   </div>
                 </div>
@@ -65,7 +114,7 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
             </div>
 
             <div className="p-4 bg-gray-50 rounded border border-[#1A202C]/5 space-y-2">
-              <h4 className="text-sm font-medium mb-2">Add New Project</h4>
+              <h4 className="text-sm font-medium mb-2">{isEditing ? 'Edit Project' : 'Add New Project'}</h4>
               <input type="text" placeholder="Title" value={newProject.title} onChange={e => setNewProject({...newProject, title: e.target.value})} className="w-full text-sm p-2 rounded border" />
               <input type="text" placeholder="Description" value={newProject.description} onChange={e => setNewProject({...newProject, description: e.target.value})} className="w-full text-sm p-2 rounded border" />
               <input type="text" placeholder="Image Path" value={newProject.image} onChange={e => setNewProject({...newProject, image: e.target.value})} className="w-full text-sm p-2 rounded border" />
@@ -76,9 +125,14 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
                 <input type="checkbox" checked={newProject.featured} onChange={e => setNewProject({...newProject, featured: e.target.checked})} />
                 Featured
               </label>
-              <button onClick={addProject} className="w-full flex items-center justify-center gap-2 bg-[#1A202C] text-white font-medium rounded py-2 hover:opacity-90">
-                <FiPlus /> Add Project
+              <button onClick={saveProject} className="w-full flex items-center justify-center gap-2 bg-[#1A202C] text-white font-medium rounded py-2 hover:opacity-90">
+                <FiPlus /> {isEditing ? 'Update Project' : 'Add Project'}
               </button>
+              {isEditing && (
+                <button onClick={() => { setNewProject({ id: null, title: '', description: '', image: '', live: '', github: '', tags: '', featured: false }); setIsEditing(false); }} className="w-full text-sm text-gray-500 hover:underline mt-2">
+                    Cancel Edit
+                </button>
+              )}
             </div>
           </div>
 
