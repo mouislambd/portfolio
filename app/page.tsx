@@ -14,7 +14,8 @@ export default function Home() {
             const res = await fetch('/api/projects');
             const data = await res.json();
             if (data.success) {
-                setProjects(data.projects);
+                // Show only the latest 2 projects
+                setProjects(data.projects.slice(0, 2));
             }
         } catch (e) {
             console.error('Error fetching projects', e);
