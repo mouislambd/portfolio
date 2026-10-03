@@ -6,9 +6,18 @@ import { supabase } from '@/lib/supabase';
 export default function AdminModal({ onClose, projects, setProjects }: { onClose: () => void, projects: any[], setProjects: any }) {
   const [newProject, setNewProject] = useState({ id: null, title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
   const [isEditing, setIsEditing] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
+
+  const fetchProjects = async () => {
+    const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('created_at', { ascending: false });
+    if (data) setProjects(data);
+  };
 
   const saveProject = async () => {
-    if (isEditing && newProject.id) {
+    if (isEditing && editingId) {
         // Update
         const { error } = await supabase
             .from('projects')
@@ -21,17 +30,15 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
                 tags: newProject.tags,
                 featured: newProject.featured
             })
-            .eq('id', newProject.id);
+            .eq('id', editingId);
 
         if (error) {
             console.error('Error updating project:', error);
             return;
         }
-
-        setProjects(projects.map(p => p.id === newProject.id ? { ...p, ...newProject } : p));
     } else {
         // Add
-        const { data, error } = await supabase
+        const { error } = await supabase
             .from('projects')
             .insert([{
                 title: newProject.title,
@@ -41,21 +48,19 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
                 github: newProject.github,
                 tags: newProject.tags,
                 featured: newProject.featured
-            }])
-            .select();
+            }]);
 
         if (error) {
             console.error('Error adding project:', error);
             return;
         }
-
-        if (data) {
-            setProjects([data[0], ...projects]);
-        }
     }
     
+    // Refresh and Reset
+    await fetchProjects();
     setNewProject({ id: null, title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
     setIsEditing(false);
+    setEditingId(null);
   };
 
   const startEdit = (project: any) => {
@@ -69,6 +74,7 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
         tags: project.tags,
         featured: project.featured
     });
+    setEditingId(project.id);
     setIsEditing(true);
   };
 
