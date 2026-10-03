@@ -21,11 +21,11 @@ export default function ProjectsPreview() {
             </div>
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
                 {projects.slice(0, 2).map((p, i) => (
-                    <div key={p.id} style={{ flex: "1 1 300px", borderRadius: 12, border: "1px solid rgba(224,90,71,0.15)", background: "#8ACFF8", overflow: "hidden", marginTop: i === 1 ? 60 : 0 }}>
+                    <div key={p.id} style={{ flex: "1 1 300px", borderRadius: 12, border: "1px solid rgba(224,90,71,0.15)", background: "#e0f2fe", overflow: "hidden", marginTop: i === 1 ? 60 : 0 }}>
                         <div style={{ height: 200, overflow: "hidden" }}>
                             {p.image
                                 ? <img src={p.image} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                                : <div style={{ width: "100%", height: "100%", background: "#8ACFF8", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 48 }}>🖥️</div>
+                                : <div style={{ width: "100%", height: "100%", background: "#e0f2fe", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 48 }}>🖥️</div>
                             }
                         </div>
                         <div style={{ padding: 20 }}>
