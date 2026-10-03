@@ -43,7 +43,7 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                         <motion.div
                             key={project.id}
                             variants={item}
-                            style={{ marginTop: index % 2 === 0 ? '0px' : '60px' }}
+                            style={{ marginTop: index % 2 === 0 ? '0px' : '80px' }}
                             className="rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow"
                         >
                             <div className="h-60 rounded-lg overflow-hidden mb-6 bg-white/5">
