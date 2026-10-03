@@ -9,22 +9,19 @@ export default function Home() {
   const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
-    // Read from localStorage
-    const saved = localStorage.getItem('projects');
-    if (saved) {
+    async function fetchProjects() {
         try {
-            const parsed = JSON.parse(saved);
-            // Ensure previewImage is mapped from image if necessary
-            const normalized = parsed.map((p: any) => ({
-                ...p,
-                previewImage: p.previewImage || p.image // Check both potential property names
-            }));
-            // Slice the first 2
-            setProjects(normalized.slice(0, 2));
+            const res = await fetch('/api/projects');
+            const data = await res.json();
+            if (data.success) {
+                setProjects(data.projects);
+            }
         } catch (e) {
-            console.error('Error parsing projects from localStorage', e);
+            console.error('Error fetching projects', e);
         }
     }
+
+    fetchProjects();
   }, []);
 
   return (
