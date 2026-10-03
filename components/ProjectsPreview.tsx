@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
-import ParticleNetwork from './ParticleNetwork';
 
 const container = {
     hidden: {},
@@ -26,7 +25,7 @@ const item = {
 
 export default function ProjectsPreview({ projects }: { projects: any[] }) {
     return (
-        <section id="projects" className="relative px-6 py-24 overflow-hidden">
+        <section id="projects" className="relative px-6 py-24 overflow-hidden bg-[#080b10] text-white">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -34,90 +33,42 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                 viewport={{ once: true, margin: '-100px' }}
                 className="max-w-5xl mx-auto"
             >
-                <motion.div
-                    variants={item}
-                    className="flex items-end justify-between mb-10"
-                >
-                    <div>
-                        <span className="block font-mono text-xs tracking-[0.2em] text-[#E05A47] mb-3">
-                            preview
-                        </span>
-                        <h2 className="font-display text-2xl sm:text-3xl font-medium text-[#1A202C]">
-                            Selected Work
-                        </h2>
-                    </div>
+                <div className="mb-16">
+                    <h2 className="text-3xl font-medium mb-2">Selected Work</h2>
+                    <div className="h-1 w-12 bg-white/20 rounded-full" />
+                </div>
 
-                    <Link
-                        href="/projects"
-                        className="hidden sm:flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
-                    >
-                        View all
-                        <FiArrowRight size={14} />
-                    </Link>
-                </motion.div>
-
-                <div className="grid sm:grid-cols-2 gap-5">
-                    {projects.map((project: any) => (
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                    {projects.map((project: any, index: number) => (
                         <motion.div
                             key={project.id}
                             variants={item}
-                            whileHover={{ y: -4 }}
-                            className="bg-white border border-[#1A202C]/15 rounded-2xl p-6 transition-colors hover:border-[#E05A47]/40"
+                            className={`bg-[#0d1117] rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-16'}`}
                         >
-                            <div className="w-full h-48 rounded-xl mb-5 overflow-hidden relative bg-[#1A202C]">
+                            <div className="h-60 rounded-lg overflow-hidden mb-6 bg-white/5">
                                 {project.image ? (
-                                    <img 
-                                        src={project.image} 
-                                        alt={project.title} 
-                                        className="w-full h-full object-cover" 
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer"
-                                    />
+                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                                 ) : (
-                                    <div className="w-full h-full flex items-center justify-center relative bg-gray-200">
-                                        <h3 className="text-[#1A202C] font-display text-xl font-bold relative z-10 px-4 text-center">
-                                            {project.title}
-                                        </h3>
-                                    </div>
+                                    <div className="w-full h-full flex items-center justify-center text-white/20">No Image</div>
                                 )}
                             </div>
 
-                            <h3 className="text-[#1A202C] text-lg font-medium mb-1.5">
-                                {project.title}
-                            </h3>
-                                <p className="text-[#4A5568] text-sm mb-4 break-words leading-relaxed">
-                                    {project.description}
-                                </p>
-
-                            <div className="flex flex-wrap gap-2 mb-5">
+                            <h3 className="text-xl font-medium mb-3">{project.title}</h3>
+                            
+                            <div className="flex flex-wrap gap-2 mb-6">
                                 {project.tags?.split(',')?.map((t: string) => (
-                                    <span
-                                        key={t}
-                                        className="font-mono text-[11px] text-[#E05A47]/80 bg-[#E05A47]/10 rounded-md px-2 py-1"
-                                    >
-                                        {t}
+                                    <span key={t} className="px-2 py-1 bg-white/5 rounded text-xs text-white/60">
+                                        {t.trim()}
                                     </span>
                                 ))}
                             </div>
 
                             <div className="flex items-center gap-4">
-                                <Link
-                                    href={project.live || '#'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
-                                >
-                                    <FiExternalLink size={14} />
-                                    Live
+                                <Link href={project.live || '#'} target="_blank" className="text-sm text-white/70 hover:text-white flex items-center gap-1">
+                                    <FiExternalLink size={14} /> Live
                                 </Link>
-                                <Link
-                                    href={project.github || '#'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
-                                >
-                                    <FiGithub size={14} />
-                                    Code
+                                <Link href={project.github || '#'} target="_blank" className="text-sm text-white/70 hover:text-white flex items-center gap-1">
+                                    <FiGithub size={14} /> Code
                                 </Link>
                             </div>
                         </motion.div>
