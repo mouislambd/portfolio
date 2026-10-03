@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {loading ? <Skeleton /> : <ProjectsPreview projects={projects} />}
+      {loading ? <Skeleton /> : <ProjectsPreview />}
       <GithubStats />
     </main>
   );
