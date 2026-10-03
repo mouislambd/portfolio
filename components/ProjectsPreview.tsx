@@ -101,24 +101,24 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             </div>
 
                             <div className="flex items-center gap-4">
-                                <a
-                                    href={project.live}
+                                <Link
+                                    href={project.live || '#'}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
                                 >
                                     <FiExternalLink size={14} />
                                     Live
-                                </a>
-                                <a
-                                    href={project.github}
+                                </Link>
+                                <Link
+                                    href={project.github || '#'}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
                                 >
                                     <FiGithub size={14} />
                                     Code
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}

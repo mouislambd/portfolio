@@ -6,11 +6,23 @@ import ProjectsPreview from '@/components/ProjectsPreview';
 import GithubStats from '@/components/GithubStats';
 import { supabase } from '@/lib/supabase';
 
+function Skeleton() {
+  return (
+    <div className="grid sm:grid-cols-2 gap-5 max-w-5xl mx-auto px-6">
+      {[1, 2].map((i) => (
+        <div key={i} className="bg-gray-200 animate-pulse rounded-2xl h-80"></div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   const [projects, setProjects] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProjects() {
+        setLoading(true);
         try {
             const { data, error } = await supabase
                 .from('projects')
@@ -23,6 +35,8 @@ export default function Home() {
             setProjects(data?.slice(0, 2) || []);
         } catch (e) {
             console.error('Error fetching projects from Supabase', e);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -32,7 +46,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <ProjectsPreview projects={projects} />
+      {loading ? <Skeleton /> : <ProjectsPreview projects={projects} />}
       <GithubStats />
     </main>
   );
