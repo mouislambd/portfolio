@@ -1,18 +1,39 @@
 'use client';
 import { useState } from 'react';
 import { FiX, FiEdit2, FiTrash2, FiPlus } from 'react-icons/fi';
+import { supabase } from '@/lib/supabase';
 
 export default function AdminModal({ onClose, projects, setProjects }: { onClose: () => void, projects: any[], setProjects: any }) {
   const [newProject, setNewProject] = useState({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
 
-  const addProject = () => {
-    const updatedProjects = [{ ...newProject, id: Date.now() }, ...projects];
-    setProjects(updatedProjects);
-    localStorage.setItem('projects', JSON.stringify(updatedProjects));
-    setNewProject({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
+  const addProject = async () => {
+    const { data, error } = await supabase
+      .from('projects')
+      .insert([newProject])
+      .select();
+
+    if (error) {
+      console.error('Error adding project:', error);
+      return;
+    }
+
+    if (data) {
+      setProjects([data[0], ...projects]);
+      setNewProject({ title: '', description: '', image: '', live: '', github: '', tags: '', featured: false });
+    }
   };
 
-  const deleteProject = (id: number) => {
+  const deleteProject = async (id: number) => {
+    const { error } = await supabase
+      .from('projects')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting project:', error);
+      return;
+    }
+
     setProjects(projects.filter(p => p.id !== id));
   };
 
@@ -30,12 +51,6 @@ export default function AdminModal({ onClose, projects, setProjects }: { onClose
           <div>
             <div className="flex justify-between items-center mb-4">
               <h4 className="text-sm font-medium">Current Projects</h4>
-              <button 
-                onClick={() => { setProjects([]); localStorage.removeItem('projects'); }}
-                className="text-xs text-[#E05A47] hover:underline"
-              >
-                Clear All Projects
-              </button>
             </div>
             <div className="space-y-2 mb-4">
               {projects.map(p => (

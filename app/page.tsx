@@ -4,27 +4,29 @@ import { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ProjectsPreview from '@/components/ProjectsPreview';
 import GithubStats from '@/components/GithubStats';
+import { supabase } from '@/lib/supabase';
 
 export default function Home() {
   const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
-    // Read from localStorage
-    const saved = localStorage.getItem('projects');
-    if (saved) {
+    async function fetchProjects() {
         try {
-            const parsed = JSON.parse(saved);
-            // Ensure previewImage is mapped from image if necessary
-            const normalized = parsed.map((p: any) => ({
-                ...p,
-                previewImage: p.previewImage || p.image // Check both potential property names
-            }));
-            // Slice the first 2
-            setProjects(normalized.slice(0, 2));
+            const { data, error } = await supabase
+                .from('projects')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+            
+            // Show only the latest 2 projects
+            setProjects(data?.slice(0, 2) || []);
         } catch (e) {
-            console.error('Error parsing projects from localStorage', e);
+            console.error('Error fetching projects from Supabase', e);
         }
     }
+
+    fetchProjects();
   }, []);
 
   return (

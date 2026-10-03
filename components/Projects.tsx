@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
 import AnimatedProjectCard from './AnimatedProjectCard';
+import { supabase } from '@/lib/supabase';
 
 const container = {
     hidden: {},
@@ -41,23 +42,33 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Load from localStorage if exists
-        const saved = localStorage.getItem('projects');
-        const localProjects = saved ? JSON.parse(saved) : [];
+        async function fetchProjects() {
+            const { data, error } = await supabase
+                .from('projects')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.error('Error fetching from Supabase:', error);
+                setLoading(false);
+                return;
+            }
+
+            const normalizedProjects = data.map((p: any) => ({
+                _id: p.id.toString(),
+                title: p.title,
+                description: p.description,
+                tech: p.tags ? (p.tags || '').split(',') : [],
+                liveLink: p.live,
+                githubLink: p.github,
+                previewImage: p.image,
+            }));
+            
+            setProjects(normalizedProjects);
+            setLoading(false);
+        }
         
-        // Normalize projects for the component
-        const normalizedProjects = localProjects.map((lp: any) => ({
-            _id: lp.id?.toString() || Math.random().toString(),
-            title: lp.title,
-            description: lp.description,
-            tech: lp.tags ? (lp.tags || '').split(',') : [],
-            liveLink: lp.live,
-            githubLink: lp.github,
-            previewImage: lp.image,
-        }));
-        
-        setProjects(normalizedProjects);
-        setLoading(false);
+        fetchProjects();
     }, []);
 
     const filtered = useMemo(() => {
