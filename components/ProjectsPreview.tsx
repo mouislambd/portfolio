@@ -46,13 +46,9 @@ export default function ProjectsPreview({ projects }: { projects: any[] }) {
                             style={{ marginTop: index % 2 === 0 ? '0px' : '80px' }}
                             className="rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow"
                         >
-                            <div className="h-60 rounded-lg overflow-hidden mb-6 bg-white/5">
-                                {project.image ? (
-                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-white/20">No Image</div>
-                                )}
-                            </div>
+                            <div style={{width:'100%', height:'200px', background:'#0d1117', display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'8px 8px 0 0'}}>
+                                    {project.image ? <img src={project.image} alt={project.title} style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'8px 8px 0 0'}} /> : <span style={{color:'#00ffa3', fontSize:'48px'}}>🖥️</span>}
+                                </div>
 
                             <h3 className="text-xl font-medium mb-3">{project.title}</h3>
                             
