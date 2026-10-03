@@ -1,77 +1,52 @@
-'use client';
+"use client";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
+import Link from "next/link";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
+export default function ProjectsPreview() {
+    const [projects, setProjects] = useState<any[]>([]);
 
-const container = {
-    hidden: {},
-    show: {
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.1,
-        },
-    },
-};
+    useEffect(() => {
+        supabase
+            .from("projects")
+            .select("*")
+            .order("created_at", { ascending: false })
+            .then(({ data }) => setProjects(data || []));
+    }, []);
 
-const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-};
-
-export default function ProjectsPreview({ projects }: { projects: any[] }) {
     return (
-        <section id="projects" className="relative px-6 py-24 overflow-hidden">
-            <motion.div
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: '-100px' }}
-                className="max-w-5xl mx-auto"
-            >
-                <div className="mb-16">
-                    <h2 className="text-3xl font-medium mb-2">Selected Work</h2>
-                    <div className="h-1 w-12 bg-white/20 rounded-full" />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8 items-start">
-                    {projects.map((project: any, index: number) => (
-                        <motion.div
-                            key={project.id}
-                            variants={item}
-                            style={{ marginTop: index % 2 === 0 ? '0px' : '80px' }}
-                            className="rounded-xl border border-white/5 p-4 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow"
-                        >
-                            <div style={{width:'100%', height:'200px', background:'#0d1117', display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'8px 8px 0 0'}}>
-                                    {project.image ? <img src={project.image} alt={project.title} style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'8px 8px 0 0'}} /> : <span style={{color:'#00ffa3', fontSize:'48px'}}>🖥️</span>}
-                                </div>
-
-                            <h3 className="text-xl font-medium mb-3">{project.title}</h3>
-                            
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                {project.tags?.split(',')?.map((t: string) => (
-                                    <span key={t} className="px-2 py-1 bg-white/5 rounded text-xs text-white/60">
-                                        {t.trim()}
-                                    </span>
-                                ))}
+        <section style={{ padding: "60px 24px", background: "transparent" }}>
+            <p style={{ color: "#00ffa3", fontFamily: "monospace", fontSize: 12, letterSpacing: 4, marginBottom: 8 }}>PREVIEW</p>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
+                <h2 style={{ fontSize: 32, fontWeight: 800 }}>Selected Work</h2>
+                <Link href="/projects" style={{ color: "#00ffa3", fontSize: 14, textDecoration: "none" }}>View all →</Link>
+            </div>
+            <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+                {projects.slice(0, 2).map((p, i) => (
+                    <div key={p.id} style={{
+                        flex: "1 1 300px", borderRadius: 12,
+                        border: "1px solid rgba(0,255,163,0.15)",
+                        background: "#0d1117", overflow: "hidden",
+                        marginTop: i === 1 ? 60 : 0,
+                        transition: "transform 0.3s, box-shadow 0.3s",
+                    }}>
+                        <div style={{ height: 200, background: "#080b10", overflow: "hidden" }}>
+                            {p.image
+                                ? <img src={p.image} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                : <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 48 }}>🖥️</div>
+                            }
+                        </div>
+                        <div style={{ padding: 20 }}>
+                            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{p.title}</h3>
+                            <p style={{ fontSize: 14, color: "#94a3b8", marginBottom: 16 }}>{p.description}</p>
+                            <div style={{ display: "flex", gap: 12 }}>
+                                <a href={p.live} target="_blank" rel="noreferrer" style={{ color: "#00ffa3", fontSize: 13, textDecoration: "none" }}>↗ Live</a>
+                                <a href={p.github} target="_blank" rel="noreferrer" style={{ color: "#94a3b8", fontSize: 13, textDecoration: "none" }}>⌥ GitHub</a>
                             </div>
-
-                            <div className="flex items-center gap-4">
-                                <Link href={project.live || '#'} target="_blank" className="text-sm text-white/70 hover:text-white flex items-center gap-1">
-                                    <FiExternalLink size={14} /> Live
-                                </Link>
-                                <Link href={project.github || '#'} target="_blank" className="text-sm text-white/70 hover:text-white flex items-center gap-1">
-                                    <FiGithub size={14} /> Code
-                                </Link>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </motion.div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </section>
     );
 }
