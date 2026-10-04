@@ -53,8 +53,7 @@ export default function Attributes() {
             <motion.div
                 variants={container}
                 initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: '-50px' }}
+                animate="show"
                 className="max-w-3xl mx-auto [perspective:1000px]"
             >
                 <motion.span
@@ -83,7 +82,11 @@ export default function Attributes() {
                         <motion.div
                             key={attr.title}
                             variants={item}
-                            whileHover={{ scale: 1.02, rotateX: 5, rotateY: 5, borderColor: '#E05A47' }}
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ 
+                                y: { repeat: Infinity, duration: 4 + index * 0.5, ease: "easeInOut" },
+                            }}
+                            whileHover={{ scale: 1.05, rotateX: 10, rotateY: 10, borderColor: '#E05A47', transition: { duration: 0.3 } }}
                             className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-xl shadow-[#1A202C]/5 hover:shadow-2xl hover:shadow-[#E05A47]/20 flex gap-4 [perspective:1000px]"
                         >
                             <div className="w-12 h-12 rounded-xl bg-[#E05A47]/10 flex items-center justify-center shrink-0">
