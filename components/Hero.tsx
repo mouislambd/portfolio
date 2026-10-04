@@ -191,7 +191,7 @@ export default function Hero() {
                             borderColor: ['#ffffff', '#E05A47', '#ffffff'],
                         }}
                         transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 shadow-2xl shadow-[#E05A47]/20 ring-4 ring-[#E05A47]/20"
+                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-2 shadow-2xl shadow-[#E05A47]/20 ring-4 ring-[#E05A47]/20"
                     >
                         <img
                             src="/images/portfolio.png"
