@@ -14,11 +14,13 @@ const container = {
 };
 
 const item = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 50, rotateX: -20, scale: 0.9 },
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+        rotateX: 0,
+        scale: 1,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
 
@@ -52,8 +54,8 @@ export default function Attributes() {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, margin: '-100px' }}
-                className="max-w-3xl mx-auto"
+                viewport={{ once: true, margin: '-50px' }}
+                className="max-w-3xl mx-auto [perspective:1000px]"
             >
                 <motion.span
                     variants={item}
@@ -81,8 +83,8 @@ export default function Attributes() {
                         <motion.div
                             key={attr.title}
                             variants={item}
-                            whileHover={{ y: -5, borderColor: '#E05A47' }}
-                            className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#E05A47]/10 flex gap-4"
+                            whileHover={{ scale: 1.02, rotateX: 5, rotateY: 5, borderColor: '#E05A47' }}
+                            className="bg-white border border-[#1A202C]/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-xl shadow-[#1A202C]/5 hover:shadow-2xl hover:shadow-[#E05A47]/20 flex gap-4 [perspective:1000px]"
                         >
                             <div className="w-12 h-12 rounded-xl bg-[#E05A47]/10 flex items-center justify-center shrink-0">
                                 <attr.icon className="text-[#E05A47]" size={24} />
