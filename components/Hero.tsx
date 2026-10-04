@@ -183,19 +183,23 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
 
-                <div
+                <motion.div
                     className="relative md:flex justify-center"
                 >
-                    <div 
-                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 border-white shadow-2xl shadow-[#E05A47]/20 ring-4 ring-[#E05A47]/20"
+                    <motion.div 
+                        animate={{
+                            borderColor: ['#ffffff', '#E05A47', '#ffffff'],
+                        }}
+                        transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                        className="relative w-64 h-80 sm:w-72 sm:h-96 overflow-hidden rounded-2xl border-4 shadow-2xl shadow-[#E05A47]/20 ring-4 ring-[#E05A47]/20"
                     >
                         <img
                             src="/images/portfolio.png"
                             alt="Kanich Fatema Mou"
                             className="w-full h-full object-cover object-center scale-[1.3] transition-transform duration-500 hover:scale-[1.4]"
                         />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );
