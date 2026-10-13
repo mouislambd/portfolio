@@ -78,7 +78,7 @@ export default function Attributes() {
                 </motion.p>
 
                 <div className="grid gap-6">
-                    {attributes.map((attr) => (
+                    {attributes.map((attr, index) => (
                         <motion.div
                             key={attr.title}
                             variants={item}
