@@ -79,26 +79,7 @@ export default function Footer() {
                             Let&apos;s build something worth shipping.
                         </h3>
 
-                        <div className="flex items-center justify-between gap-4 mt-5">
-                            <div className="flex items-center gap-4 flex-wrap">
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]/80 hover:text-[#E05A47] transition-colors focus-ring"
-                                >
-                                    Get in touch
-                                    <FiArrowUpRight size={14} />
-                                </Link>
-
-                                <a
-                                    href="/cv.pdf"
-                                    download
-                                    className="inline-flex items-center gap-1.5 text-sm bg-[#E05A47] text-[#FDFBF7] font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity focus-ring"
-                                >
-                                    <FiDownload size={14} />
-                                    Download CV
-                                </a>
-                            </div>
-
+                        <div className="flex items-center gap-5 mt-5 flex-wrap">
                             <motion.span
                                 animate={{
                                     y: [0, -6, 0],
@@ -109,11 +90,28 @@ export default function Footer() {
                                     repeat: Infinity,
                                     ease: 'easeInOut',
                                 }}
-                                className="inline-block text-2xl filter grayscale opacity-75 select-none"
+                                className="inline-block text-4xl filter grayscale opacity-80 select-none"
                                 title="Book"
                             >
                                 📖
                             </motion.span>
+
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]/80 hover:text-[#E05A47] transition-colors focus-ring"
+                            >
+                                Get in touch
+                                <FiArrowUpRight size={14} />
+                            </Link>
+
+                            <a
+                                href="/cv.pdf"
+                                download
+                                className="inline-flex items-center gap-1.5 text-sm bg-[#E05A47] text-[#FDFBF7] font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity focus-ring"
+                            >
+                                <FiDownload size={14} />
+                                Download CV
+                            </a>
                         </div>
 
                         <div className="flex flex-col gap-2 mt-6">
