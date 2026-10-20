@@ -50,13 +50,13 @@ export default function Navbar() {
             className="group flex items-center gap-3 text-[#000000] focus-ring"
           >
             <div 
-              className="hidden sm:flex flex-col justify-center leading-tight font-bold text-[#C84B31] transition-opacity group-hover:opacity-80"
+              className="hidden sm:flex flex-col justify-center leading-tight font-bold text-[#31AAA9] transition-opacity group-hover:opacity-80"
               style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.5rem' }}
             >
               <span>Kanich</span>
               <span>Fatema Mou</span>
             </div>
-            <div className="flex flex-col leading-none font-black text-sm tracking-tighter text-[#C84B31] border-l-2 border-[#C84B31] pl-2">
+            <div className="flex flex-col leading-none font-black text-sm tracking-tighter text-[#31AAA9] border-l-2 border-[#31AAA9] pl-2">
               <span className="font-black leading-none">K</span>
               <span className="font-black leading-none">F</span>
               <span className="font-black leading-none">M</span>
