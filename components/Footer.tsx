@@ -91,7 +91,7 @@ export default function Footer() {
                             <a
                                 href="/cv.pdf"
                                 download
-                                className="inline-flex items-center gap-1.5 text-sm bg-[#E05A47] text-[#FDFBF7] font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity focus-ring"
+                                className="inline-flex items-center gap-1.5 text-sm bg-[#718096] text-[#FDFBF7] font-medium rounded-lg px-4 py-2 hover:bg-[#4A5568] transition-colors focus-ring"
                             >
                                 <FiDownload size={14} />
                                 Download CV
@@ -117,7 +117,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col gap-4 sm:items-end relative pt-6">
-                        {/* 3D Code Coming Out of Book Animation */}
+                        {/* 3D Code Coming Out of Laptop Animation */}
                         <div className="absolute top-0 right-10 flex flex-col items-center pointer-events-none z-10">
                             {['</>', '{ }', '01', 'fn()'].map((code, idx) => (
                                 <motion.span
@@ -158,9 +158,9 @@ export default function Footer() {
                             }}
                             className="inline-block text-7xl sm:text-8xl filter grayscale-[30%] drop-shadow-2xl select-none cursor-pointer"
                             style={{ perspective: 1000 }}
-                            title="Code from Book"
+                            title="Code from Laptop"
                         >
-                            📖
+                            💻
                         </motion.span>
                         <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
                             {navLinks.map((link) => (
