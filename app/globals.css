@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital@1&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1A202C; /* Deep Charcoal (Text) */
+  --color-ink-card: #FFFFFF; /* White for cards */
+  --color-ink-line: rgba(26, 32, 44, 0.15); /* Slightly darker border */
+
+  --color-accent-teal: #31AAA9; /* Primary Accent */
+  --color-accent-rust: #E05A47; /* Secondary Accent */
+  
+  --color-text-primary: #1A202C; /* Deep Charcoal */
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #718096;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FDFBF7; /* Cream / Off-White */
+  color: #1A202C;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient Background Glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(224,90,71,0.08) 0%, rgba(49,170,169,0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(49,170,169,0.07) 0%, rgba(224,90,71,0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+/* Soft Glassmorphism Utility Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(224, 90, 71, 0.18);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 90, 71, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(224, 90, 71, 0.08);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(224, 90, 71, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(224, 90, 71, 0.15);
+}
+
+.glass-nav {
+  background: rgba(253, 251, 247, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(224, 90, 71, 0.15);
+}
+
+::selection {
+  background-color: #31AAA9; /* Teal Cyan */
+  color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E05A47, #31AAA9);
+  border-radius: 8px;
+  border: 2px solid #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c74d3c, #258a89);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #31AAA9;
+  outline-offset: 3px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #1A202C, #E05A47, #31AAA9, #1A202C);
+  background-size: 300% 100%;
+  animation: shimmer 6s infinite linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

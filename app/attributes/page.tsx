@@ -1,0 +1,9 @@
+﻿import Attributes from '@/components/Attributes';
+
+export default function AttributesPage() {
+    return (
+        <main>
+            <Attributes />
+        </main>
+    );
+}
