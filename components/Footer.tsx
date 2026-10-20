@@ -119,15 +119,15 @@ export default function Footer() {
                     <div className="flex flex-col gap-4 sm:items-end">
                         <motion.span
                             animate={{
-                                y: [0, -6, 0],
-                                rotate: [0, 6, -6, 0],
+                                y: [0, -8, 0],
+                                rotate: [0, 8, -8, 0],
                             }}
                             transition={{
                                 duration: 3,
                                 repeat: Infinity,
                                 ease: 'easeInOut',
                             }}
-                            className="inline-block text-4xl filter grayscale opacity-80 select-none"
+                            className="inline-block text-6xl sm:text-7xl filter grayscale opacity-90 select-none"
                             title="Book"
                         >
                             📖

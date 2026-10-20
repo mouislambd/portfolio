@@ -8,11 +8,6 @@ export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
 const GithubStats: React.FC = () => {
-  const explicitTheme = {
-    light: ['#312e81', '#831843', '#be185d', '#ec4899', '#f472b6'],
-    dark: ['#312e81', '#831843', '#be185d', '#ec4899', '#f472b6'],
-  };
-
   return (
     <section className="w-full max-w-6xl mx-auto px-4 py-16 flex flex-col items-center justify-center text-center">
       {/* Animated Activity Header */}
@@ -26,18 +21,16 @@ const GithubStats: React.FC = () => {
       </motion.h2>
       
       {/* Subtitle */}
-      <p className="text-gray-400 text-base md:text-lg mt-3 mb-10">
+      <p className="text-gray-500 text-base md:text-lg mt-3 mb-10">
         Real-time coding activity on GitHub (@mouislambd)
       </p>
 
       {/* Centered Calendar Wrapper */}
-      <div className="flex justify-center w-full overflow-x-auto pb-4">
+      <div className="flex justify-center w-full overflow-x-auto pb-4 glass-card p-6 sm:p-10 rounded-3xl">
         <GitHubCalendar 
           username="mouislambd" 
-          theme={explicitTheme}
-          colorScheme="dark"
-          blockSize={12}
-          blockMargin={4}
+          blockSize={13}
+          blockMargin={5}
           fontSize={14}
         />
       </div>
