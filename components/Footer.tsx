@@ -79,23 +79,7 @@ export default function Footer() {
                             Let&apos;s build something worth shipping.
                         </h3>
 
-                        <div className="flex items-center gap-5 mt-5 flex-wrap">
-                            <motion.span
-                                animate={{
-                                    y: [0, -6, 0],
-                                    rotate: [0, 6, -6, 0],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: 'easeInOut',
-                                }}
-                                className="inline-block text-4xl filter grayscale opacity-80 select-none"
-                                title="Book"
-                            >
-                                📖
-                            </motion.span>
-
+                        <div className="flex flex-wrap items-center gap-4 mt-5">
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center gap-1.5 text-sm text-[#E05A47]/80 hover:text-[#E05A47] transition-colors focus-ring"
@@ -132,7 +116,22 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-6 sm:items-end">
+                    <div className="flex flex-col gap-4 sm:items-end">
+                        <motion.span
+                            animate={{
+                                y: [0, -6, 0],
+                                rotate: [0, 6, -6, 0],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: 'easeInOut',
+                            }}
+                            className="inline-block text-4xl filter grayscale opacity-80 select-none"
+                            title="Book"
+                        >
+                            📖
+                        </motion.span>
                         <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
                             {navLinks.map((link) => (
                                 <Link

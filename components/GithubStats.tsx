@@ -20,7 +20,7 @@ const GithubStats: React.FC = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-6xl md:text-8xl font-black tracking-wider bg-gradient-to-r from-[#C84B31] via-[#E86A50] to-[#E580A1] bg-clip-text text-transparent drop-shadow-lg"
+        className="text-6xl md:text-8xl font-black tracking-wider text-[#718096] italic drop-shadow-lg"
       >
         ACTIVITY
       </motion.h2>
