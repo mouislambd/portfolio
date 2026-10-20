@@ -136,7 +136,7 @@ export default function Footer() {
                                         delay: idx * 0.7,
                                         ease: 'easeOut',
                                     }}
-                                    className="absolute font-mono text-xs font-bold text-[#E05A47] glass px-2 py-0.5 rounded shadow-sm border border-[#E05A47]/30"
+                                    className="absolute font-mono text-xs font-bold text-[#718096] glass px-2 py-0.5 rounded shadow-sm border border-[#718096]/30"
                                 >
                                     {code}
                                 </motion.span>
