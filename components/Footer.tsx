@@ -116,19 +116,49 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 sm:items-end">
+                    <div className="flex flex-col gap-4 sm:items-end relative pt-6">
+                        {/* 3D Code Coming Out of Book Animation */}
+                        <div className="absolute top-0 right-10 flex flex-col items-center pointer-events-none z-10">
+                            {['</>', '{ }', '01', 'fn()'].map((code, idx) => (
+                                <motion.span
+                                    key={code}
+                                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                                    animate={{
+                                        opacity: [0, 1, 0],
+                                        y: [-5, -45 - idx * 12],
+                                        x: [(idx % 2 === 0 ? -12 : 12), (idx % 2 === 0 ? -25 : 25)],
+                                        scale: [0.8, 1.15, 0.9],
+                                        rotate: [0, (idx % 2 === 0 ? 15 : -15), 0]
+                                    }}
+                                    transition={{
+                                        duration: 2.8,
+                                        repeat: Infinity,
+                                        delay: idx * 0.7,
+                                        ease: 'easeOut',
+                                    }}
+                                    className="absolute font-mono text-xs font-bold text-[#E05A47] glass px-2 py-0.5 rounded shadow-sm border border-[#E05A47]/30"
+                                >
+                                    {code}
+                                </motion.span>
+                            ))}
+                        </div>
+
                         <motion.span
                             animate={{
-                                y: [0, -8, 0],
-                                rotate: [0, 8, -8, 0],
+                                y: [0, -10, 0],
+                                rotateX: [0, 15, 0],
+                                rotateY: [0, 10, 0],
+                                rotateZ: [0, 5, -5, 0],
+                                scale: [1, 1.08, 1],
                             }}
                             transition={{
-                                duration: 3,
+                                duration: 4,
                                 repeat: Infinity,
                                 ease: 'easeInOut',
                             }}
-                            className="inline-block text-6xl sm:text-7xl filter grayscale opacity-90 select-none"
-                            title="Book"
+                            className="inline-block text-7xl sm:text-8xl filter grayscale-[30%] drop-shadow-2xl select-none cursor-pointer"
+                            style={{ perspective: 1000 }}
+                            title="Code from Book"
                         >
                             📖
                         </motion.span>
