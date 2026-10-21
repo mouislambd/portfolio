@@ -98,13 +98,13 @@ export default function ProjectsPreview() {
                             </div>
 
                             {/* Actions / Links */}
-                            <div className="flex items-center gap-4 pt-4 border-t border-[#1A202C]/8">
+                            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                                 {p.live && (
                                     <a
                                         href={p.live}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1A202C] text-white text-sm font-medium hover:bg-[#E05A47] transition-colors shadow-sm focus-ring"
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#E05A47]/20 border border-[#E05A47]/40 text-[#e2e6ec] text-sm font-medium hover:bg-[#E05A47] hover:text-white transition-all shadow-sm focus-ring"
                                     >
                                         <FiExternalLink size={15} />
                                         <span>Live Demo</span>
@@ -115,7 +115,7 @@ export default function ProjectsPreview() {
                                         href={p.github}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#1A202C]/15 text-[#1A202C] text-sm font-medium hover:border-[#E05A47] hover:text-[#E05A47] transition-colors focus-ring"
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-[#9aa3af] text-sm font-medium hover:border-[#E05A47] hover:text-white transition-all focus-ring"
                                     >
                                         <FiGithub size={15} />
                                         <span>Source Code</span>

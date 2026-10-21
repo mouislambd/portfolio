@@ -86,7 +86,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
                     href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-[#1A202C] hover:text-[#E05A47] transition-colors focus-ring"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#E05A47]/20 border border-[#E05A47]/40 text-sm text-[#e2e6ec] hover:bg-[#E05A47] hover:text-white transition-all focus-ring"
                 >
                     <FiExternalLink size={14} />
                     Live
@@ -96,7 +96,7 @@ const AnimatedProjectCard: React.FC<AnimatedProjectCardProps> = ({
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-[#4A5568] hover:text-[#E05A47] transition-colors focus-ring"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-white/10 text-sm text-[#9aa3af] hover:border-[#E05A47] hover:text-white transition-all focus-ring"
                 >
                     <FiGithub size={14} />
                     Code
