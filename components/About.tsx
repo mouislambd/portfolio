@@ -83,10 +83,14 @@ export default function About() {
                                 Skilled in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, and Firebase. Passionate about building scalable, user-friendly, and high-performance web applications.
                                 Experienced in developing responsive full-stack applications, integrating authentication, databases, and modern backend services while following clean code and best practices.
                             </p>
-                            <p>
-                                Short-term goal: Grow as a professional Full-Stack Developer by building impactful real-world applications.
-                                Long-term goal: Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
-                            </p>
+                            <div className="space-y-3 pt-2 pb-1">
+                                <p className="text-white font-medium leading-relaxed">
+                                    <strong className="text-[#E05A47] font-semibold">Short-term goal:</strong> Grow as a professional Full-Stack Developer by building impactful real-world applications.
+                                </p>
+                                <p className="text-white font-medium leading-relaxed">
+                                    <strong className="text-[#E05A47] font-semibold">Long-term goal:</strong> Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
+                                </p>
+                            </div>
                             <p className="text-[#E05A47]/80">
                                 I believe in shipping code, learning in public, and letting
                                 projects speak louder than words.
