@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #1A202C; /* Deep Charcoal (Text) */
-  --color-ink-card: #FFFFFF; /* White for cards */
-  --color-ink-line: rgba(26, 32, 44, 0.15); /* Slightly darker border */
+  --color-ink: #e2e6ec;
+  --color-ink-card: rgba(255, 255, 255, 0.04);
+  --color-ink-line: rgba(255, 255, 255, 0.08);
 
-  --color-accent-teal: #31AAA9; /* Primary Accent */
-  --color-accent-rust: #E05A47; /* Secondary Accent */
+  --color-accent-teal: #31AAA9;
+  --color-accent-rust: #E05A47;
   
-  --color-text-primary: #1A202C; /* Deep Charcoal */
-  --color-text-secondary: #4A5568;
-  --color-text-muted: #718096;
+  --color-text-primary: #e2e6ec;
+  --color-text-secondary: #9aa3af;
+  --color-text-muted: #9aa3af;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -29,72 +29,48 @@ html {
 }
 
 body {
-  background-color: #FDFBF7; /* Cream / Off-White */
-  color: #1A202C;
+  background: #111318;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 100vh;
+  color: #9aa3af;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Ambient Background Glow */
-body::before {
-  content: '';
-  position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, rgba(224,90,71,0.08) 0%, rgba(49,170,169,0.05) 50%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(80px);
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  bottom: -10%;
-  right: -10%;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, rgba(49,170,169,0.07) 0%, rgba(224,90,71,0.05) 50%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(80px);
-}
-
-/* Soft Glassmorphism Utility Classes */
-.glass {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(224, 90, 71, 0.18);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(224, 90, 71, 0.2);
-  box-shadow: 0 10px 30px -5px rgba(224, 90, 71, 0.08);
+/* Remove all white/light backgrounds and apply Ash Glassmorphism to cards, section boxes, modals, navbar, footer */
+.glass, .glass-card, .glass-nav,
+card, .card, [class*="card"], [class*="box"], [class*="modal"], [class*="nav"], [class*="footer"],
+header, footer, nav, section, 
+div.bg-white, div.bg-gray-50, div.bg-gray-100, div.bg-gray-200, 
+div[class*="bg-white"], div[class*="bg-gray"], div[class*="bg-cream"] {
+  background: rgba(255,255,255,0.04) !important;
+  background-color: rgba(255,255,255,0.04) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 16px !important;
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(224, 90, 71, 0.4);
-  box-shadow: 0 20px 40px -10px rgba(224, 90, 71, 0.15);
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.15) !important;
 }
 
-.glass-nav {
-  background: rgba(253, 251, 247, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(224, 90, 71, 0.15);
+/* All text: color #e2e6ec for headings, #9aa3af for subtext */
+h1, h2, h3, h4, h5, h6, 
+.font-display, [class*="title"], [class*="heading"] {
+  color: #e2e6ec !important;
+}
+
+p, span, label, li, a, small, 
+.text-sm, .text-base, .text-xs, .text-muted,
+[class*="text-"]:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  color: #9aa3af !important;
 }
 
 ::selection {
-  background-color: #31AAA9; /* Teal Cyan */
+  background-color: #31AAA9;
   color: #FFFFFF;
 }
 
@@ -103,17 +79,17 @@ body::after {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FDFBF7;
+  background: #111318;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #E05A47, #31AAA9);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
-  border: 2px solid #FDFBF7;
+  border: 2px solid #111318;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c74d3c, #258a89);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .focus-ring:focus-visible {
@@ -138,10 +114,10 @@ body::after {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, #1A202C, #E05A47, #31AAA9, #1A202C);
+  background: linear-gradient(90deg, #e2e6ec, #E05A47, #31AAA9, #e2e6ec);
   background-size: 300% 100%;
   animation: shimmer 6s infinite linear;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: transparent !important;
 }
