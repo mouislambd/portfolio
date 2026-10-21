@@ -85,10 +85,10 @@ export default function About() {
                             </p>
                             <div className="space-y-3 pt-2 pb-1">
                                 <p className="text-white font-medium leading-relaxed">
-                                    <strong className="text-[#E05A47] font-semibold">Short-term goal:</strong> Grow as a professional Full-Stack Developer by building impactful real-world applications.
+                                    <strong className="text-[#E05A47] font-semibold">Short-term goal:</strong> To advance my career as a Full-Stack Developer, contribute to real-world projects, and build impactful web applications.
                                 </p>
                                 <p className="text-white font-medium leading-relaxed">
-                                    <strong className="text-[#E05A47] font-semibold">Long-term goal:</strong> Transition into Data Science and AI Engineering, applying strong software engineering skills to create intelligent, data-driven solutions.
+                                    <strong className="text-[#E05A47] font-semibold">Long-term goal:</strong>: To become a skilled Data Scientist and AI Engineer by deepening my expertise in Machine Learning, Data Science, and AI, and establishing myself in these fields.
                                 </p>
                             </div>
                             <p className="text-[#E05A47]/80">
