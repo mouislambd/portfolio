@@ -53,11 +53,26 @@ export default function Hero() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
+        let mouseX = 0;
+        let mouseY = 0;
+
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            setMousePosition({ x: mouseX, y: mouseY });
         };
+
+        const handleScroll = () => {
+            setMousePosition({ x: mouseX, y: mouseY });
+        };
+
         window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
